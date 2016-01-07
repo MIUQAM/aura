@@ -1,0 +1,876 @@
+/*
+ *	IanniX Score File
+ */
+
+
+/*
+ *	This method is called first.
+ *	It is the good section for asking user for script global variables (parameters).
+ *	
+ * 	This section is never overwritten by IanniX when saving.
+ */
+function askUserForParameters() {
+	//title("The title of the parameter box");
+	//ask("Group name of the parameter (only for display purposes)", "Parameter label", "myGlobalVar", "theDefaultValue");
+}
+
+
+/*
+ *	This method stores all the operations made through IanniX scripts.
+ *	You can add some commands here to make your own scripts!
+ *	Scripts are written in Javascript but even with a limited knowledge of Javascript, many types of useful scripts can be created.
+ *	
+ *	Beyond the standard javascript commands, the run() function is used to send commands to IanniX.
+ *	Commands must be provided to run() as a single string.
+ *	For example, run("zoom 100"); sets the display zoom to 100%.
+ *	
+ *	To combine numeric parameters with text commands to produce a string, use the concatenation operator.
+ *	In the following example center_x and center_y are in numeric variables and must be concatenated to the command string.
+ *	Example: run("setPos current " + center_x + " " + center_y + " 0");
+ *	
+ *	To learn IanniX commands, perform an manipulation in IanniX graphical user interface, and see the Helper window.
+ *	You'll see the syntax of the command-equivalent action.
+ *	
+ *	And finally, remember that most of commands must target an object.
+ *	Global syntax is always run("<command name> <target> <arguments>");
+ *	Targets can be an ID (number) or a Group ID (string name of group) (please see "Info" tab in Inspector panel).
+ *	Special targets are "current" (last used ID), "all" (all the objects) and "lastCurve" (last used curve).
+ *	
+ * 	This section is never overwritten by IanniX when saving.
+ */
+function makeWithScript() {
+	//Clears the score
+	run("clear");
+	//Resets rotation
+	run("rotate 0 0 0");
+	//Resets score viewport center
+	run("center 0 0");
+	//Resets score zoom
+	run("zoom 100");
+}
+
+
+/*
+ *	When an incoming message is received, this method is called.
+ *		- <protocol> tells information about the nature of message ("osc", "midi", "direct…)
+ *		- <host> and <port> gives the origin of message, specially for IP protocols (for OpenSoundControl, UDP or TCP, it is the IP and port of the application that sends the message)
+ *		- <destination> is the supposed destination of message (for OpenSoundControl it is the path, for MIDI it is Control Change or Note on/off…)
+ *		- <values> are an array of arguments contained in the message
+ *	
+ * 	This section is never overwritten by IanniX when saving.
+ */
+function onIncomingMessage(protocol, host, port, destination, values) {
+	//Logs a message in the console (open "Config" tab from Inspector panel and see "Message log")
+	console("Received on '" + protocol + "' (" + host + ":" + port + ") to '" + destination + "', " + values.length + " values : ");
+	
+	//Browses all the arguments and displays them in log window
+	for(var valueIndex = 0 ; valueIndex < values.length ; valueIndex++)
+		console("- arg " + valueIndex + " = " + values[valueIndex]);
+}
+
+
+/*
+ *	This method stores all the operations made through the graphical user interface.
+ *	You are not supposed to modify this section, but it can be useful to remove some stuff that you added accidentaly.
+ *	
+ * 	Be very careful! This section is automaticaly overwritten when saving a score.
+ */
+function madeThroughGUI() {
+//GUI: NEVER EVER REMOVE THIS LINE
+	run("zoom 136");
+	run("rotate 0 0 0");
+
+	run("registertexture background -7  7 7 -7 foret1pouriannixproto.png");
+
+	run("add curve 37");
+	run("setpos current -5.24187 6.26436 0");
+	var points37 = [
+		{x: 0, y: 0, z: 0, c1x: 0, c1y: 0, c1z: 0, c2x: 0, c2y: 0, c2z: 0},
+		{x: 2.50353, y: 0.388875, z: 0, c1x: 0.500706, c1y: 0.077775, c1z: 0, c2x: -0.996186, c2y: -0.113661, c2z: 0},
+		{x: 4.98093, y: 0.568307, z: 0, c1x: 0.996186, c1y: 0.113661, c1z: 0, c2x: -0.996365, c2y: 0.00427693, c2z: 0},
+		{x: 7.48536, y: 0.367491, z: 0, c1x: 0.996365, c1y: -0.00427693, c1z: 0, c2x: -0.985654, c2y: 0.108346, c2z: 0},
+		{x: 9.9092, y: 0.0265761, z: 0, c1x: 0.985654, c1y: -0.108346, c1z: 0, c2x: -0.342354, c2y: 0.437274, c2z: 0},
+		{x: 9.19713, y: -1.81888, z: 0, c1x: 0.342354, c1y: -0.437274, c1z: 0, c2x: 0.630459, c2y: 0.48432, c2z: 0},
+		{x: 6.7569, y: -2.39502, z: 0, c1x: -0.630459, c1y: -0.48432, c1z: 0, c2x: 0.410904, c2y: 0.498693, c2z: 0},
+		{x: 7.14261, y: -4.31234, z: 0, c1x: -0.410904, c1y: -0.498693, c1z: 0, c2x: -0.379228, c2y: 0.776114, c2z: 0},
+		{x: 8.65304, y: -6.2756, z: 0, c1x: 0.379228, c1y: -0.776114, c1z: 0, c2x: -0.399611, c2y: 0.886497, c2z: 0},
+		{x: 9.14066, y: -8.74483, z: 0, c1x: 0.399611, c1y: -0.886497, c1z: 0, c2x: -0.24189, c2y: 0.971061, c2z: 0},
+		{x: 9.86249, y: -11.1309, z: 0, c1x: 0.24189, c1y: -0.971061, c1z: 0, c2x: -0.144365, c2y: 0.477214, c2z: 0},
+	];
+	for(var i = 0 ; i < points37.length ; i++)
+		run("setpointat current " + i + " " + points37[i].x + " " + points37[i].y + " " + points37[i].z + " " + points37[i].c1x + " " + points37[i].c1y + " " + points37[i].c1z + " " + points37[i].c2x + " " + points37[i].c2y + " " + points37[i].c2z);
+	run("add cursor 38");
+	run("setcurve current lastCurve");
+	run("setpos current 4.62062 -4.86654 0");
+	run("setpattern current 5 0 1 0");
+
+
+	run("add curve 1");
+	run("setpos current -5.3713 6.08316 0");
+	var points1 = [
+		{x: 0, y: 0, z: 0, c1x: 0, c1y: 0, c1z: 0, c2x: 0, c2y: 0, c2z: 0},
+		{x: 9.22511, y: -0.925193, z: 0, c1x: 1.84502, c1y: -0.185039, c1z: 0, c2x: -1.38369, c2y: 1.87978, c2z: 0},
+		{x: 6.91846, y: -9.39889, z: 0, c1x: 1.38369, c1y: -1.87978, c1z: 0, c2x: 1.27888, c2y: 2.0743, c2z: 0},
+		{x: 2.83069, y: -11.2967, z: 0, c1x: -1.27888, c1y: -2.0743, c1z: 0, c2x: 0.809746, c2y: -1.41798, c2z: 0},
+		{x: 2.86973, y: -2.309, z: 0, c1x: -0.809746, c1y: 1.41798, c1z: 0, c2x: -1.23525, c2y: -0.778667, c2z: 0},
+		{x: 9.00695, y: -7.40334, z: 0, c1x: 1.23525, c1y: 0.778667, c1z: 0, c2x: -0.659954, c2y: -0.503823, c2z: 0},
+		{x: 6.1695, y: 0.210115, z: 0, c1x: 0.659954, c1y: 0.503823, c1z: 0, c2x: 1.73857, c2y: 0.3746, c2z: 0},
+		{x: 0.314117, y: -9.27634, z: 0, c1x: -1.73857, c1y: -0.3746, c1z: 0, c2x: -0.754311, c2y: 2.28597, c2z: 0},
+		{x: 9.94106, y: -11.2197, z: 0, c1x: 0.754311, c1y: -2.28597, c1z: 0, c2x: -0.278869, c2y: -0.298733, c2z: 0},
+		{x: 1.70846, y: -7.78267, z: 0, c1x: 0.278869, c1y: 0.298733, c1z: 0, c2x: 1.3912, c2y: -2.31065, c2z: 0},
+		{x: 2.98503, y: 0.333525, z: 0, c1x: -1.3912, c1y: 2.31065, c1z: 0, c2x: 0.342273, c2y: -0.174213, c2z: 0},
+		{x: -0.00290387, y: -6.91161, z: 0, c1x: -0.342273, c1y: 0.174213, c1z: 0, c2x: -1.26043, c2y: 1.18163, c2z: 0},
+		{x: 9.28717, y: -5.57463, z: 0, c1x: 1.26043, c1y: -1.18163, c1z: 0, c2x: -0.910619, c2y: -1.10968, c2z: 0},
+		{x: 4.55019, y: -1.3632, z: 0, c1x: 0.910619, c1y: 1.10968, c1z: 0, c2x: 1.18215, c2y: 0.844791, c2z: 0},
+		{x: 3.37643, y: -9.79858, z: 0, c1x: -1.18215, c1y: -0.844791, c1z: 0, c2x: -0.918147, c2y: 0.958538, c2z: 0},
+		{x: 9.14093, y: -6.15588, z: 0, c1x: 0.918147, c1y: -0.958538, c1z: 0, c2x: -0.565911, c2y: 0.473224, c2z: 0},
+		{x: 6.20598, y: -12.1647, z: 0, c1x: 0.565911, c1y: -0.473224, c1z: 0, c2x: 1.58726, c2y: -0.170155, c2z: 0},
+		{x: 1.20465, y: -5.30511, z: 0, c1x: -1.58726, c1y: 0.170155, c1z: 0, c2x: -0.423159, c2y: -2.4884, c2z: 0},
+		{x: 8.32178, y: 0.277304, z: 0, c1x: 0.423159, c1y: 2.4884, c1z: 0, c2x: 0.151445, c2y: -0.991727, c2z: 0},
+		{x: 0.447427, y: -0.346472, z: 0, c1x: -0.151445, c1y: 0.991727, c1z: 0, c2x: 0.602384, c2y: 0.0624381, c2z: 0},
+		{x: 5.30986, y: -0.034886, z: 0, c1x: -0.602384, c1y: -0.0624381, c1z: 0, c2x: -1.30995, c2y: 1.40913, c2z: 0},
+		{x: 6.99716, y: -7.39213, z: 0, c1x: 1.30995, c1y: -1.40913, c1z: 0, c2x: -0.223595, c2y: 0.764436, c2z: 0},
+		{x: 6.42783, y: -3.85707, z: 0, c1x: 0.223595, c1y: -0.764436, c1z: 0, c2x: 0.0184111, c2y: 0.924338, c2z: 0},
+		{x: 6.90511, y: -12.0138, z: 0, c1x: -0.0184111, c1y: -0.924338, c1z: 0, c2x: -0.764192, c2y: 0.0840006, c2z: 0},
+		{x: 10.2488, y: -4.27707, z: 0, c1x: 0.764192, c1y: -0.0840006, c1z: 0, c2x: 1.37351, c2y: -1.41895, c2z: 0},
+		{x: 0.0375511, y: -4.91905, z: 0, c1x: -1.37351, c1y: 1.41895, c1z: 0, c2x: 0.508204, c2y: 1.43861, c2z: 0},
+		{x: 7.70777, y: -11.4701, z: 0, c1x: -0.508204, c1y: -1.43861, c1z: 0, c2x: -0.60527, c2y: 0.616255, c2z: 0},
+		{x: 3.0639, y: -8.00033, z: 0, c1x: 0.60527, c1y: -0.616255, c1z: 0, c2x: 0.693714, c2y: -2.32944, c2z: 0},
+		{x: 4.2392, y: 0.177073, z: 0, c1x: -0.693714, c1y: 2.32944, c1z: 0, c2x: -1.04938, c2y: -1.61658, c2z: 0},
+		{x: 8.31082, y: 0.0825567, z: 0, c1x: 1.04938, c1y: 1.61658, c1z: 0, c2x: 0.84784, c2y: 0.0354146, c2z: 0},
+		{x: 1.72599e-14, y: -3.45202e-15, z: 0, c1x: -0.84784, c1y: -0.0354146, c1z: 0, c2x: 1.66216, c2y: 0.0165113, c2z: 0},
+	];
+	for(var i = 0 ; i < points1.length ; i++)
+		run("setpointat current " + i + " " + points1[i].x + " " + points1[i].y + " " + points1[i].z + " " + points1[i].c1x + " " + points1[i].c1y + " " + points1[i].c1z + " " + points1[i].c2x + " " + points1[i].c2y + " " + points1[i].c2z);
+	run("add cursor 2");
+	run("setcurve current lastCurve");
+	run("setpos current -5.3713 6.08316 0");
+	run("setpattern current 0 0 1");
+	run("settime current 22870.2814999611");
+
+
+	run("add curve 39");
+	run("setpos current 4.95713 6.18671 0");
+	var points39 = [
+		{x: 0, y: 0, z: 0, c1x: 0, c1y: 0, c1z: 0, c2x: 0, c2y: 0, c2z: 0},
+		{x: -2.02852, y: 0.111562, z: 0, c1x: -0.405703, c1y: 0.0223125, c1z: 0, c2x: 0.814164, c2y: -0.0169315, c2z: 0},
+		{x: -4.07082, y: 0.0846577, z: 0, c1x: -0.814164, c1y: 0.0169315, c1z: 0, c2x: 0.738105, c2y: 0.241641, c2z: 0},
+		{x: -5.71904, y: -1.09664, z: 0, c1x: -0.738105, c1y: -0.241641, c1z: 0, c2x: 0.528713, c2y: 0.604382, c2z: 0},
+		{x: -6.71438, y: -2.93725, z: 0, c1x: -0.528713, c1y: -0.604382, c1z: 0, c2x: 0.281724, c2y: 0.763572, c2z: 0},
+		{x: -7.12766, y: -4.91451, z: 0, c1x: -0.281724, c1y: -0.763572, c1z: 0, c2x: 0.0295526, c2y: 0.799463, c2z: 0},
+		{x: -6.86214, y: -6.93457, z: 0, c1x: -0.0295526, c1y: -0.799463, c1z: 0, c2x: -0.248864, c2y: 0.754865, c2z: 0},
+		{x: -5.88334, y: -8.68883, z: 0, c1x: 0.248864, c1y: -0.754865, c1z: 0, c2x: -0.552417, c2y: 0.54844, c2z: 0},
+		{x: -4.10006, y: -9.67677, z: 0, c1x: 0.552417, c1y: -0.54844, c1z: 0, c2x: -0.745272, c2y: 0.339398, c2z: 0},
+		{x: -2.15698, y: -10.3858, z: 0, c1x: 0.745272, c1y: -0.339398, c1z: 0, c2x: -0.763063, c2y: 0.270107, c2z: 0},
+		{x: -0.284744, y: -11.0273, z: 0, c1x: 0.763063, c1y: -0.270107, c1z: 0, c2x: -0.374447, c2y: 0.128295, c2z: 0},
+	];
+	for(var i = 0 ; i < points39.length ; i++)
+		run("setpointat current " + i + " " + points39[i].x + " " + points39[i].y + " " + points39[i].z + " " + points39[i].c1x + " " + points39[i].c1y + " " + points39[i].c1z + " " + points39[i].c2x + " " + points39[i].c2y + " " + points39[i].c2z);
+	run("add cursor 40");
+	run("setcurve current lastCurve");
+	run("setpos current 4.67239 -4.84059 0");
+	run("setpattern current 5 0 1 0");
+
+
+	run("add curve 3");
+	run("setpos current 5.03479 0.31063 0");
+	var points3 = [
+		{x: 0, y: 0, z: 0, c1x: 0, c1y: 0, c1z: 0, c2x: 0, c2y: 0, c2z: 0},
+		{x: -1.96594, y: -0.206176, z: 0, c1x: -0.393189, c1y: -0.0412353, c1z: 0, c2x: 0.770386, c2y: 0.146499, c2z: 0},
+		{x: -3.85193, y: -0.732496, z: 0, c1x: -0.770386, c1y: -0.146499, c1z: 0, c2x: 0.743977, c2y: 0.24971, c2z: 0},
+		{x: -5.68583, y: -1.45473, z: 0, c1x: -0.743977, c1y: -0.24971, c1z: 0, c2x: 0.723598, c2y: 0.32337, c2z: 0},
+		{x: -7.46992, y: -2.34934, z: 0, c1x: -0.723598, c1y: -0.32337, c1z: 0, c2x: 0.52488, c2y: 0.521314, c2z: 0},
+		{x: -8.31023, y: -4.06129, z: 0, c1x: -0.52488, c1y: -0.521314, c1z: 0, c2x: 0.0315952, c2y: 0.700433, c2z: 0},
+		{x: -7.6279, y: -5.85151, z: 0, c1x: -0.0315952, c1y: -0.700433, c1z: 0, c2x: -0.485776, c2y: 0.50833, c2z: 0},
+		{x: -5.88135, y: -6.60295, z: 0, c1x: 0.485776, c1y: -0.50833, c1z: 0, c2x: -0.747393, c2y: 0.148539, c2z: 0},
+		{x: -3.89093, y: -6.5942, z: 0, c1x: 0.747393, c1y: -0.148539, c1z: 0, c2x: -0.796015, c2y: -0.0651032, c2z: 0},
+		{x: -1.90128, y: -6.27743, z: 0, c1x: 0.796015, c1y: 0.0651032, c1z: 0, c2x: -0.71606, c2y: -0.210928, c2z: 0},
+		{x: -0.310629, y: -5.53956, z: 0, c1x: 0.71606, c1y: 0.210928, c1z: 0, c2x: -0.31813, c2y: -0.147574, c2z: 0},
+	];
+	for(var i = 0 ; i < points3.length ; i++)
+		run("setpointat current " + i + " " + points3[i].x + " " + points3[i].y + " " + points3[i].z + " " + points3[i].c1x + " " + points3[i].c1y + " " + points3[i].c1z + " " + points3[i].c2x + " " + points3[i].c2y + " " + points3[i].c2z);
+	run("add cursor 4");
+	run("setcurve current lastCurve");
+	run("setpos current 4.72416 -5.22893 0");
+	run("setpattern current 5 0 1 0");
+
+
+	run("add curve 41");
+	run("setpos current 4.62062 6.21259 0");
+	var points41 = [
+		{x: 0, y: 0, z: 0, c1x: 0, c1y: 0, c1z: 0, c2x: 0, c2y: 0, c2z: 0},
+		{x: 0.964823, y: -0.962322, z: 0, c1x: 0.192965, c1y: -0.192464, c1z: 0, c2x: -0.234991, c2y: 0.468833, c2z: 0},
+		{x: 1.17496, y: -2.34417, z: 0, c1x: 0.234991, c1y: -0.468833, c1z: 0, c2x: 0.00403146, c2y: 0.563314, c2z: 0},
+		{x: 0.944665, y: -3.77889, z: 0, c1x: -0.00403146, c1y: -0.563314, c1z: 0, c2x: 0.135036, c2y: 0.547523, c2z: 0},
+		{x: 0.499776, y: -5.08178, z: 0, c1x: -0.135036, c1y: -0.547523, c1z: 0, c2x: 0.233777, c2y: 0.519597, c2z: 0},
+		{x: -0.224219, y: -6.37688, z: 0, c1x: -0.233777, c1y: -0.519597, c1z: 0, c2x: 0.333547, c2y: 0.46198, c2z: 0},
+		{x: -1.16796, y: -7.39168, z: 0, c1x: -0.333547, c1y: -0.46198, c1z: 0, c2x: 0.275152, c2y: 0.476877, c2z: 0},
+		{x: -1.59998, y: -8.76126, z: 0, c1x: -0.275152, c1y: -0.476877, c1z: 0, c2x: 0.0970825, c2y: 0.546243, c2z: 0},
+		{x: -1.65337, y: -10.1229, z: 0, c1x: -0.0970825, c1y: -0.546243, c1z: 0, c2x: -0.191712, c2y: 0.450191, c2z: 0},
+		{x: -0.641423, y: -11.0122, z: 0, c1x: 0.191712, c1y: -0.450191, c1z: 0, c2x: -0.439395, c2y: 0.191241, c2z: 0},
+		{x: 0.543602, y: -11.0791, z: 0, c1x: 0.439395, c1y: -0.191241, c1z: 0, c2x: -0.237005, c2y: 0.013376, c2z: 0},
+	];
+	for(var i = 0 ; i < points41.length ; i++)
+		run("setpointat current " + i + " " + points41[i].x + " " + points41[i].y + " " + points41[i].z + " " + points41[i].c1x + " " + points41[i].c1y + " " + points41[i].c1z + " " + points41[i].c2x + " " + points41[i].c2y + " " + points41[i].c2z);
+	run("add cursor 42");
+	run("setcurve current lastCurve");
+	run("setpos current 5.16422 -4.86651 0");
+	run("setpattern current 5 0 1 0");
+
+
+	run("add curve 5");
+	run("setpos current 4.80182 0.362401 0");
+	var points5 = [
+		{x: 0, y: 0, z: 0, c1x: 0, c1y: 0, c1z: 0, c2x: 0, c2y: 0, c2z: 0},
+		{x: 0.715698, y: -0.253063, z: 0, c1x: 0.14314, c1y: -0.0506127, c1z: 0, c2x: -0.220484, c2y: 0.190332, c2z: 0},
+		{x: 1.10242, y: -0.95166, z: 0, c1x: 0.220484, c1y: -0.190332, c1z: 0, c2x: -0.13833, c2y: 0.2897, c2z: 0},
+		{x: 1.40735, y: -1.70156, z: 0, c1x: 0.13833, c1y: -0.2897, c1z: 0, c2x: -0.0901872, c2y: 0.310641, c2z: 0},
+		{x: 1.55336, y: -2.50486, z: 0, c1x: 0.0901872, c1y: -0.310641, c1z: 0, c2x: -0.0395141, c2y: 0.320989, c2z: 0},
+		{x: 1.60492, y: -3.30651, z: 0, c1x: 0.0395141, c1y: -0.320989, c1z: 0, c2x: -0.0154907, c2y: 0.322489, c2z: 0},
+		{x: 1.63081, y: -4.11731, z: 0, c1x: 0.0154907, c1y: -0.322489, c1z: 0, c2x: 0.0347115, c2y: 0.314919, c2z: 0},
+		{x: 1.43136, y: -4.8811, z: 0, c1x: -0.0347115, c1y: -0.314919, c1z: 0, c2x: 0.147769, c2y: 0.267653, c2z: 0},
+		{x: 0.891966, y: -5.45557, z: 0, c1x: -0.147769, c1y: -0.267653, c1z: 0, c2x: 0.239692, c2y: 0.183459, c2z: 0},
+		{x: 0.232902, y: -5.7984, z: 0, c1x: -0.239692, c1y: -0.183459, c1z: 0, c2x: 0.261228, c2y: 0.0116194, c2z: 0},
+		{x: -0.414173, y: -5.51367, z: 0, c1x: -0.261228, c1y: -0.0116194, c1z: 0, c2x: 0.129415, c2y: -0.0569453, c2z: 0},
+	];
+	for(var i = 0 ; i < points5.length ; i++)
+		run("setpointat current " + i + " " + points5[i].x + " " + points5[i].y + " " + points5[i].z + " " + points5[i].c1x + " " + points5[i].c1y + " " + points5[i].c1z + " " + points5[i].c2x + " " + points5[i].c2y + " " + points5[i].c2z);
+	run("add cursor 6");
+	run("setcurve current lastCurve");
+	run("setpos current 4.38765 -5.15127 0");
+	run("setpattern current 5 0 1 0");
+
+
+	run("add curve 43");
+	run("setpos current 4.95713 6.08316 0");
+	var points43 = [
+		{x: 0, y: 0, z: 0, c1x: 0, c1y: 0, c1z: 0, c2x: 0, c2y: 0, c2z: 0},
+		{x: -2.29397, y: 0.525412, z: 0, c1x: -0.458794, c1y: 0.105082, c1z: 0, c2x: 0.926776, c2y: -0.0215346, c2z: 0},
+		{x: -4.63388, y: 0.107673, z: 0, c1x: -0.926776, c1y: 0.0215346, c1z: 0, c2x: 0.73994, c2y: 0.482872, c2z: 0},
+		{x: -5.99367, y: -1.88895, z: 0, c1x: -0.73994, c1y: -0.482872, c1z: 0, c2x: 0.413289, c2y: 0.846895, c2z: 0},
+		{x: -6.70032, y: -4.1268, z: 0, c1x: -0.413289, c1y: -0.846895, c1z: 0, c2x: 0.290999, c2y: 0.922853, c2z: 0},
+		{x: -7.44866, y: -6.50322, z: 0, c1x: -0.290999, c1y: -0.922853, c1z: 0, c2x: 0.24429, c2y: 0.936437, c2z: 0},
+		{x: -7.92178, y: -8.80898, z: 0, c1x: -0.24429, c1y: -0.936437, c1z: 0, c2x: -0.0304273, c2y: 0.921728, c2z: 0},
+		{x: -7.29653, y: -11.1119, z: 0, c1x: 0.0304273, c1y: -0.921728, c1z: 0, c2x: -0.569893, c2y: 0.63466, c2z: 0},
+		{x: -5.07231, y: -11.9823, z: 0, c1x: 0.569893, c1y: -0.63466, c1z: 0, c2x: -0.929356, c2y: 0.0969803, c2z: 0},
+		{x: -2.64975, y: -11.5968, z: 0, c1x: 0.929356, c1y: -0.0969803, c1z: 0, c2x: -0.931628, c2y: -0.216877, c2z: 0},
+		{x: -0.414173, y: -10.8979, z: 0, c1x: 0.931628, c1y: 0.216877, c1z: 0, c2x: -0.447115, c2y: -0.139772, c2z: 0},
+	];
+	for(var i = 0 ; i < points43.length ; i++)
+		run("setpointat current " + i + " " + points43[i].x + " " + points43[i].y + " " + points43[i].z + " " + points43[i].c1x + " " + points43[i].c1y + " " + points43[i].c1z + " " + points43[i].c2x + " " + points43[i].c2y + " " + points43[i].c2z);
+	run("add cursor 44");
+	run("setcurve current lastCurve");
+	run("setpos current 4.54296 -4.81474 0");
+	run("setpattern current 5 0 1 0");
+
+
+	run("add curve 7");
+	run("setpos current 5.06067 0.336515 0");
+	var points7 = [
+		{x: 0, y: 0, z: 0, c1x: 0, c1y: 0, c1z: 0, c2x: 0, c2y: 0, c2z: 0},
+		{x: -1.56416, y: -0.961281, z: 0, c1x: -0.312831, c1y: -0.192256, c1z: 0, c2x: 0.62745, c2y: 0.38147, c2z: 0},
+		{x: -3.13725, y: -1.90735, z: 0, c1x: -0.62745, c1y: -0.38147, c1z: 0, c2x: 0.516083, c2y: 0.490155, c2z: 0},
+		{x: -4.14457, y: -3.41206, z: 0, c1x: -0.516083, c1y: -0.490155, c1z: 0, c2x: 0.415796, c2y: 0.592698, c2z: 0},
+		{x: -5.21623, y: -4.87084, z: 0, c1x: -0.415796, c1y: -0.592698, c1z: 0, c2x: 0.330769, c2y: 0.635277, c2z: 0},
+		{x: -5.79842, y: -6.58844, z: 0, c1x: -0.330769, c1y: -0.635277, c1z: 0, c2x: -0.198169, c2y: 0.375153, c2z: 0},
+		{x: -4.22538, y: -6.74661, z: 0, c1x: 0.198169, c1y: -0.375153, c1z: 0, c2x: -0.620504, c2y: -0.167698, c2z: 0},
+		{x: -2.6959, y: -5.74995, z: 0, c1x: 0.620504, c1y: 0.167698, c1z: 0, c2x: -0.604709, c2y: -0.418266, c2z: 0},
+		{x: -1.20184, y: -4.65528, z: 0, c1x: 0.604709, c1y: 0.418266, c1z: 0, c2x: -0.608739, c2y: -0.336693, c2z: 0},
+		{x: 0.347795, y: -4.06649, z: 0, c1x: 0.608739, c1y: 0.336693, c1z: 0, c2x: -0.204127, c2y: 0.182034, c2z: 0},
+		{x: -0.181201, y: -5.56545, z: 0, c1x: 0.204127, c1y: -0.182034, c1z: 0, c2x: 0.105799, c2y: 0.299792, c2z: 0},
+	];
+	for(var i = 0 ; i < points7.length ; i++)
+		run("setpointat current " + i + " " + points7[i].x + " " + points7[i].y + " " + points7[i].z + " " + points7[i].c1x + " " + points7[i].c1y + " " + points7[i].c1z + " " + points7[i].c2x + " " + points7[i].c2y + " " + points7[i].c2z);
+	run("add cursor 8");
+	run("setcurve current lastCurve");
+	run("setpos current 4.87947 -5.22894 0");
+	run("setpattern current 5 0 1 0");
+
+
+	run("add curve 45");
+	run("setpos current 4.6465 5.90196 0");
+	var points45 = [
+		{x: 0, y: 0, z: 0, c1x: 0, c1y: 0, c1z: 0, c2x: 0, c2y: 0, c2z: 0},
+		{x: -1.5122, y: -0.747314, z: 0, c1x: -0.30244, c1y: -0.149463, c1z: 0, c2x: 0.57613, c2y: 0.331921, c2z: 0},
+		{x: -2.88065, y: -1.6596, z: 0, c1x: -0.57613, c1y: -0.331921, c1z: 0, c2x: 0.225526, c2y: 0.480146, c2z: 0},
+		{x: -2.63983, y: -3.14805, z: 0, c1x: -0.225526, c1y: -0.480146, c1z: 0, c2x: -0.327711, c2y: 0.471847, c2z: 0},
+		{x: -1.24209, y: -4.01884, z: 0, c1x: 0.327711, c1y: -0.471847, c1z: 0, c2x: -0.490059, c2y: 0.433586, c2z: 0},
+		{x: -0.189532, y: -5.31598, z: 0, c1x: 0.490059, c1y: -0.433586, c1z: 0, c2x: -0.103593, c2y: 0.492693, c2z: 0},
+		{x: -0.724129, y: -6.4823, z: 0, c1x: 0.103593, c1y: -0.492693, c1z: 0, c2x: 0.359171, c2y: 0.432614, c2z: 0},
+		{x: -1.98539, y: -7.47905, z: 0, c1x: -0.359171, c1y: -0.432614, c1z: 0, c2x: 0.317532, c2y: 0.5153, c2z: 0},
+		{x: -2.31179, y: -9.0588, z: 0, c1x: -0.317532, c1y: -0.5153, c1z: 0, c2x: -0.126608, c2y: 0.570195, c2z: 0},
+		{x: -1.35234, y: -10.33, z: 0, c1x: 0.126608, c1y: -0.570195, c1z: 0, c2x: -0.483066, c2y: 0.347119, c2z: 0},
+		{x: 0.103543, y: -10.7944, z: 0, c1x: 0.483066, c1y: -0.347119, c1z: 0, c2x: -0.291177, c2y: 0.0928759, c2z: 0},
+	];
+	for(var i = 0 ; i < points45.length ; i++)
+		run("setpointat current " + i + " " + points45[i].x + " " + points45[i].y + " " + points45[i].z + " " + points45[i].c1x + " " + points45[i].c1y + " " + points45[i].c1z + " " + points45[i].c2x + " " + points45[i].c2y + " " + points45[i].c2z);
+	run("add cursor 46");
+	run("setcurve current lastCurve");
+	run("setpos current 4.75004 -4.89244 0");
+	run("setpattern current 5 0 1 0");
+
+
+	run("add curve 9");
+	run("setpos current 4.93124 0.31063 0");
+	var points9 = [
+		{x: 0, y: 0, z: 0, c1x: 0, c1y: 0, c1z: 0, c2x: 0, c2y: 0, c2z: 0},
+		{x: 1.04527, y: -0.191434, z: 0, c1x: 0.209053, c1y: -0.0382869, c1z: 0, c2x: -0.176623, c2y: 0.222599, c2z: 0},
+		{x: 0.883113, y: -1.113, z: 0, c1x: 0.176623, c1y: -0.222599, c1z: 0, c2x: 0.229112, c2y: 0.265121, c2z: 0},
+		{x: -0.100291, y: -1.51704, z: 0, c1x: -0.229112, c1y: -0.265121, c1z: 0, c2x: 0.416788, c2y: 0.0828527, c2z: 0},
+		{x: -1.20083, y: -1.52726, z: 0, c1x: -0.416788, c1y: -0.0828527, c1z: 0, c2x: 0.369531, c2y: 0.125937, c2z: 0},
+		{x: -1.94795, y: -2.14673, z: 0, c1x: -0.369531, c1y: -0.125937, c1z: 0, c2x: 0.096413, c2y: 0.289696, c2z: 0},
+		{x: -1.68289, y: -2.97574, z: 0, c1x: -0.096413, c1y: -0.289696, c1z: 0, c2x: -0.251575, c2y: 0.259969, c2z: 0},
+		{x: -0.690069, y: -3.44657, z: 0, c1x: 0.251575, c1y: -0.259969, c1z: 0, c2x: -0.381632, c2y: 0.209521, c2z: 0},
+		{x: 0.22527, y: -4.02334, z: 0, c1x: 0.381632, c1y: -0.209521, c1z: 0, c2x: -0.288167, c2y: 0.28048, c2z: 0},
+		{x: 0.750766, y: -4.84897, z: 0, c1x: 0.288167, c1y: -0.28048, c1z: 0, c2x: 0.0295224, c2y: 0.29289, c2z: 0},
+		{x: 0.0776577, y: -5.48779, z: 0, c1x: -0.0295224, c1y: -0.29289, c1z: 0, c2x: 0.134622, c2y: 0.127765, c2z: 0},
+	];
+	for(var i = 0 ; i < points9.length ; i++)
+		run("setpointat current " + i + " " + points9[i].x + " " + points9[i].y + " " + points9[i].z + " " + points9[i].c1x + " " + points9[i].c1y + " " + points9[i].c1z + " " + points9[i].c2x + " " + points9[i].c2y + " " + points9[i].c2z);
+	run("add cursor 10");
+	run("setcurve current lastCurve");
+	run("setpos current 5.0089 -5.17716 0");
+	run("setpattern current 5 0 1 0");
+
+
+	run("add curve 47");
+	run("setpos current 4.85359 6.05728 0");
+	var points47 = [
+		{x: 0, y: 0, z: 0, c1x: 0, c1y: 0, c1z: 0, c2x: 0, c2y: 0, c2z: 0},
+		{x: 0.704129, y: -1.07333, z: 0, c1x: 0.140826, c1y: -0.214666, c1z: 0, c2x: -0.258088, c2y: 0.435087, c2z: 0},
+		{x: 1.29044, y: -2.17543, z: 0, c1x: 0.258088, c1y: -0.435087, c1z: 0, c2x: -0.152681, c2y: 0.46621, c2z: 0},
+		{x: 1.46753, y: -3.40438, z: 0, c1x: 0.152681, c1y: -0.46621, c1z: 0, c2x: -0.0550398, c2y: 0.5051, c2z: 0},
+		{x: 1.56564, y: -4.70093, z: 0, c1x: 0.0550398, c1y: -0.5051, c1z: 0, c2x: -0.00273175, c2y: 0.50245, c2z: 0},
+		{x: 1.48119, y: -5.91663, z: 0, c1x: 0.00273175, c1y: -0.50245, c1z: 0, c2x: 0.230422, c2y: 0.370556, c2z: 0},
+		{x: 0.413533, y: -6.55371, z: 0, c1x: -0.230422, c1y: -0.370556, c1z: 0, c2x: 0.369193, c2y: 0.327892, c2z: 0},
+		{x: -0.364773, y: -7.55608, z: 0, c1x: -0.369193, c1y: -0.327892, c1z: 0, c2x: 0.192726, c2y: 0.449641, c2z: 0},
+		{x: -0.550097, y: -8.80191, z: 0, c1x: -0.192726, c1y: -0.449641, c1z: 0, c2x: -0.100367, c2y: 0.446764, c2z: 0},
+		{x: 0.137064, y: -9.7899, z: 0, c1x: 0.100367, c1y: -0.446764, c1z: 0, c2x: -0.0944879, c2y: 0.434737, c2z: 0},
+		{x: -0.0776572, y: -10.9756, z: 0, c1x: 0.0944879, c1y: -0.434737, c1z: 0, c2x: 0.0429443, c2y: 0.23714, c2z: 0},
+	];
+	for(var i = 0 ; i < points47.length ; i++)
+		run("setpointat current " + i + " " + points47[i].x + " " + points47[i].y + " " + points47[i].z + " " + points47[i].c1x + " " + points47[i].c1y + " " + points47[i].c1z + " " + points47[i].c2x + " " + points47[i].c2y + " " + points47[i].c2z);
+	run("add cursor 48");
+	run("setcurve current lastCurve");
+	run("setpos current 4.77593 -4.91832 0");
+	run("setpattern current 5 0 1 0");
+
+
+	run("add curve 11");
+	run("setpos current 5.0089 0.388287 0");
+	var points11 = [
+		{x: 0, y: 0, z: 0, c1x: 0, c1y: 0, c1z: 0, c2x: 0, c2y: 0, c2z: 0},
+		{x: -1.01383, y: 0.830646, z: 0, c1x: -0.202765, c1y: 0.166129, c1z: 0, c2x: 0.195183, c2y: -0.4276, c2z: 0},
+		{x: -0.975914, y: 2.138, z: 0, c1x: -0.195183, c1y: 0.4276, c1z: 0, c2x: -0.246393, c2y: -0.38807, c2z: 0},
+		{x: 0.218136, y: 2.77099, z: 0, c1x: 0.246393, c1y: 0.38807, c1z: 0, c2x: -0.462677, c2y: 0.0217248, c2z: 0},
+		{x: 1.33747, y: 2.02937, z: 0, c1x: 0.462677, c1y: -0.0217248, c1z: 0, c2x: -0.267003, c2y: 0.42586, c2z: 0},
+		{x: 1.55315, y: 0.641692, z: 0, c1x: 0.267003, c1y: -0.42586, c1z: 0, c2x: 0.0513164, c2y: 0.538007, c2z: 0},
+		{x: 1.08089, y: -0.660662, z: 0, c1x: -0.0513164, c1y: -0.538007, c1z: 0, c2x: 0.292523, c2y: 0.447719, c2z: 0},
+		{x: 0.0905375, y: -1.5969, z: 0, c1x: -0.292523, c1y: -0.447719, c1z: 0, c2x: 0.413041, c2y: 0.365525, c2z: 0},
+		{x: -0.984318, y: -2.48829, z: 0, c1x: -0.413041, c1y: -0.365525, c1z: 0, c2x: 0.227206, c2y: 0.4427, c2z: 0},
+		{x: -1.04549, y: -3.8104, z: 0, c1x: -0.227206, c1y: -0.4427, c1z: 0, c2x: -0.114029, c2y: 0.50671, c2z: 0},
+		{x: -0.414173, y: -5.02184, z: 0, c1x: 0.114029, c1y: -0.50671, c1z: 0, c2x: -0.126264, c2y: 0.242287, c2z: 0},
+	];
+	for(var i = 0 ; i < points11.length ; i++)
+		run("setpointat current " + i + " " + points11[i].x + " " + points11[i].y + " " + points11[i].z + " " + points11[i].c1x + " " + points11[i].c1y + " " + points11[i].c1z + " " + points11[i].c2x + " " + points11[i].c2y + " " + points11[i].c2z);
+	run("add cursor 12");
+	run("setcurve current lastCurve");
+	run("setpos current 4.59473 -4.63355 0");
+	run("setpattern current 5 0 1 0");
+
+
+	run("add curve 49");
+	run("setpos current 4.90536 6.21259 0");
+	var points49 = [
+		{x: 0, y: 0, z: 0, c1x: 0, c1y: 0, c1z: 0, c2x: 0, c2y: 0, c2z: 0},
+		{x: -2.69241, y: 0.259742, z: 0, c1x: -0.538482, c1y: 0.0519484, c1z: 0, c2x: 1.07724, c2y: -0.019326, c2z: 0},
+		{x: -5.3862, y: 0.0966298, z: 0, c1x: -1.07724, c1y: 0.019326, c1z: 0, c2x: 1.04955, c2y: 0.186166, c2z: 0},
+		{x: -7.94016, y: -0.671089, z: 0, c1x: -1.04955, c1y: -0.186166, c1z: 0, c2x: 0.759436, c2y: 0.609588, c2z: 0},
+		{x: -9.18337, y: -2.95131, z: 0, c1x: -0.759436, c1y: -0.609588, c1z: 0, c2x: 0.102495, c2y: 0.89676, c2z: 0},
+		{x: -8.45263, y: -5.15489, z: 0, c1x: -0.102495, c1y: -0.89676, c1z: 0, c2x: -0.689248, c2y: 0.396853, c2z: 0},
+		{x: -5.73714, y: -4.93558, z: 0, c1x: 0.689248, c1y: -0.396853, c1z: 0, c2x: -1.06692, c2y: -0.0950188, c2z: 0},
+		{x: -3.11805, y: -4.67979, z: 0, c1x: 1.06692, c1y: 0.0950188, c1z: 0, c2x: -0.935318, c2y: 0.300104, c2z: 0},
+		{x: -1.06055, y: -6.4361, z: 0, c1x: 0.935318, c1y: -0.300104, c1z: 0, c2x: -0.513879, c2y: 0.871332, c2z: 0},
+		{x: -0.548651, y: -9.03645, z: 0, c1x: 0.513879, c1y: -0.871332, c1z: 0, c2x: -0.222464, c2y: 1.01662, c2z: 0},
+		{x: 0.0517716, y: -11.5192, z: 0, c1x: 0.222464, c1y: -1.01662, c1z: 0, c2x: -0.120084, c2y: 0.49655, c2z: 0},
+	];
+	for(var i = 0 ; i < points49.length ; i++)
+		run("setpointat current " + i + " " + points49[i].x + " " + points49[i].y + " " + points49[i].z + " " + points49[i].c1x + " " + points49[i].c1y + " " + points49[i].c1z + " " + points49[i].c2x + " " + points49[i].c2y + " " + points49[i].c2z);
+	run("add cursor 50");
+	run("setcurve current lastCurve");
+	run("setpos current 4.95713 -5.30661 0");
+	run("setpattern current 5 0 1 0");
+
+
+	run("add curve 13");
+	run("setpos current 4.77593 0.155315 0");
+	var points13 = [
+		{x: 0, y: 0, z: 0, c1x: 0, c1y: 0, c1z: 0, c2x: 0, c2y: 0, c2z: 0},
+		{x: -1.97866, y: -1.01923, z: 0, c1x: -0.395732, c1y: -0.203845, c1z: 0, c2x: 0.79796, c2y: 0.391736, c2z: 0},
+		{x: -3.9898, y: -1.95868, z: 0, c1x: -0.79796, c1y: -0.391736, c1z: 0, c2x: 0.85443, c2y: 0.222521, c2z: 0},
+		{x: -6.25081, y: -2.13183, z: 0, c1x: -0.85443, c1y: -0.222521, c1z: 0, c2x: 0.891714, c2y: 0.111495, c2z: 0},
+		{x: -8.44837, y: -2.51615, z: 0, c1x: -0.891714, c1y: -0.111495, c1z: 0, c2x: 0.756206, c2y: 0.338596, c2z: 0},
+		{x: -10.0318, y: -3.82481, z: 0, c1x: -0.756206, c1y: -0.338596, c1z: 0, c2x: 0.0596443, c2y: 0.611893, c2z: 0},
+		{x: -8.74659, y: -5.57562, z: 0, c1x: -0.0596443, c1y: -0.611893, c1z: 0, c2x: -0.667415, c2y: 0.531881, c2z: 0},
+		{x: -6.69476, y: -6.48422, z: 0, c1x: 0.667415, c1y: -0.531881, c1z: 0, c2x: -0.866056, c2y: 0.190904, c2z: 0},
+		{x: -4.41631, y: -6.53014, z: 0, c1x: 0.866056, c1y: -0.190904, c1z: 0, c2x: -0.893279, c2y: -0.0604357, c2z: 0},
+		{x: -2.22836, y: -6.18204, z: 0, c1x: 0.893279, c1y: 0.0604357, c1z: 0, c2x: -0.841844, c2y: -0.229177, c2z: 0},
+		{x: -0.207087, y: -5.38425, z: 0, c1x: 0.841844, c1y: 0.229177, c1z: 0, c2x: -0.404256, c2y: -0.159558, c2z: 0},
+	];
+	for(var i = 0 ; i < points13.length ; i++)
+		run("setpointat current " + i + " " + points13[i].x + " " + points13[i].y + " " + points13[i].z + " " + points13[i].c1x + " " + points13[i].c1y + " " + points13[i].c1z + " " + points13[i].c2x + " " + points13[i].c2y + " " + points13[i].c2z);
+	run("add cursor 14");
+	run("setcurve current lastCurve");
+	run("setpos current 4.56884 -5.22894 0");
+	run("setpattern current 5 0 1 0");
+
+
+	run("add curve 51");
+	run("setpos current -4.1029 0.155315 0");
+	var points51 = [
+		{x: 0, y: 0, z: 0, c1x: 0, c1y: 0, c1z: 0, c2x: 0, c2y: 0, c2z: 0},
+		{x: -0.741944, y: 6.12964, z: 0, c1x: -1.60364, c1y: 0.539033, c1z: 0, c2x: -1.18529, c2y: -1.23624, c2z: 0},
+		{x: 5.92643, y: 6.1812, z: 0, c1x: 1.18529, c1y: 1.23624, c1z: 0, c2x: -1.40587, c2y: 0.439119, c2z: 0},
+		{x: 6.28741, y: 3.93404, z: 0, c1x: 1.40587, c1y: -0.439119, c1z: 0, c2x: 0.607205, c2y: 0.929498, c2z: 0},
+		{x: 2.8904, y: 1.53371, z: 0, c1x: -0.607205, c1y: -0.929498, c1z: 0, c2x: -0.492763, c2y: 0.667805, c2z: 0},
+		{x: 8.75122, y: 0.595019, z: 0, c1x: 0.492763, c1y: -0.667805, c1z: 0, c2x: -0.340208, c2y: 0.959654, c2z: 0},
+		{x: 4.59144, y: -3.26456, z: 0, c1x: 0.340208, c1y: -0.959654, c1z: 0, c2x: 1.98914, c2y: 0.941447, c2z: 0},
+		{x: -1.1945, y: -4.11222, z: 0, c1x: -1.98914, c1y: -0.941447, c1z: 0, c2x: -0.0856227, c2y: 0.555069, c2z: 0},
+		{x: 5.01956, y: -6.0399, z: 0, c1x: 0.0856227, c1y: -0.555069, c1z: 0, c2x: -2.15707, c2y: -0.290291, c2z: 0},
+		{x: 9.59083, y: -2.66076, z: 0, c1x: 2.15707, c1y: 0.290291, c1z: 0, c2x: -0.0633423, c2y: -1.38894, c2z: 0},
+		{x: 5.33627, y: 0.904784, z: 0, c1x: 0.0633423, c1y: 1.38894, c1z: 0, c2x: 2.0172, c2y: -0.145106, c2z: 0},
+		{x: -0.495152, y: -1.93523, z: 0, c1x: -2.0172, c1y: 0.145106, c1z: 0, c2x: 0.402102, c2y: 0.657483, c2z: 0},
+		{x: 3.32576, y: -2.38263, z: 0, c1x: -0.402102, c1y: -0.657483, c1z: 0, c2x: 0.196361, c2y: -0.84021, c2z: 0},
+		{x: -1.47696, y: 2.26582, z: 0, c1x: -0.196361, c1y: 0.84021, c1z: 0, c2x: 0.463068, c2y: -1.75367, c2z: 0},
+		{x: 1.01042, y: 6.38573, z: 0, c1x: -0.463068, c1y: 1.75367, c1z: 0, c2x: -1.77057, c2y: -0.407849, c2z: 0},
+		{x: 7.37589, y: 4.30506, z: 0, c1x: 1.77057, c1y: 0.407849, c1z: 0, c2x: -0.759976, c2y: 0.0509044, c2z: 0},
+		{x: 4.8103, y: 6.1312, z: 0, c1x: 0.759976, c1y: -0.0509044, c1z: 0, c2x: 1.60713, c2y: 0.376049, c2z: 0},
+		{x: -0.659771, y: 2.42482, z: 0, c1x: -1.60713, c1y: -0.376049, c1z: 0, c2x: 0.284079, c2y: 1.27789, c2z: 0},
+		{x: 3.3899, y: -0.258248, z: 0, c1x: -0.284079, c1y: -1.27789, c1z: 0, c2x: -0.565013, c2y: 1.17387, c2z: 0},
+		{x: 2.16529, y: -3.44451, z: 0, c1x: 0.565013, c1y: -1.17387, c1z: 0, c2x: -0.651063, c2y: 0.400287, c2z: 0},
+		{x: 6.64522, y: -2.25968, z: 0, c1x: 0.651063, c1y: -0.400287, c1z: 0, c2x: -0.845279, c2y: -1.50386, c2z: 0},
+		{x: 6.39169, y: 4.07481, z: 0, c1x: 0.845279, c1y: 1.50386, c1z: 0, c2x: 1.28746, c2y: -1.56186, c2z: 0},
+		{x: 0.207945, y: 5.54964, z: 0, c1x: -1.28746, c1y: 1.56186, c1z: 0, c2x: 0.0994588, c2y: -0.453887, c2z: 0},
+		{x: 5.8944, y: 6.34425, z: 0, c1x: -0.0994588, c1y: 0.453887, c1z: 0, c2x: -1.82464, c2y: 0.78621, c2z: 0},
+		{x: 9.33114, y: 1.61859, z: 0, c1x: 1.82464, c1y: -0.78621, c1z: 0, c2x: 0.56057, c2y: 1.17291, c2z: 0},
+		{x: 3.09155, y: 0.479696, z: 0, c1x: -0.56057, c1y: -1.17291, c1z: 0, c2x: 2.29979, c2y: 0.610182, c2z: 0},
+		{x: -2.1678, y: -1.43232, z: 0, c1x: -2.29979, c1y: -0.610182, c1z: 0, c2x: -0.106576, c2y: 0.576201, c2z: 0},
+		{x: 3.62443, y: -2.40131, z: 0, c1x: 0.106576, c1y: -0.576201, c1z: 0, c2x: -2.12552, c2y: 0.836756, c2z: 0},
+		{x: 8.45982, y: -5.6161, z: 0, c1x: 2.12552, c1y: -0.836756, c1z: 0, c2x: 0.0717766, c2y: 0.50594, c2z: 0},
+		{x: 3.26555, y: -4.93101, z: 0, c1x: -0.0717766, c1y: -0.50594, c1z: 0, c2x: -0.018425, c2y: -0.835039, c2z: 0},
+		{x: 8.55194, y: -1.44091, z: 0, c1x: 0.018425, c1y: 0.835039, c1z: 0, c2x: -0.519919, c2y: -1.63858, c2z: 0},
+		{x: 5.86514, y: 3.26192, z: 0, c1x: 0.519919, c1y: 1.63858, c1z: 0, c2x: 1.77799, c2y: -0.776549, c2z: 0},
+		{x: -0.338013, y: 2.44184, z: 0, c1x: -1.77799, c1y: 0.776549, c1z: 0, c2x: 0.903414, c2y: -0.732214, c2z: 0},
+		{x: 1.34807, y: 6.92298, z: 0, c1x: -0.903414, c1y: 0.732214, c1z: 0, c2x: -1.65132, c2y: -0.690307, c2z: 0},
+		{x: 7.91858, y: 5.89337, z: 0, c1x: 1.65132, c1y: 0.690307, c1z: 0, c2x: -1.53108, c2y: 1.42815, c2z: 0},
+		{x: 9.00344, y: -0.217756, z: 0, c1x: 1.53108, c1y: -1.42815, c1z: 0, c2x: 0.866653, c2y: 1.60318, c2z: 0},
+		{x: 3.58532, y: -2.12251, z: 0, c1x: -0.866653, c1y: -1.60318, c1z: 0, c2x: 2.0956, c2y: -0.370912, c2z: 0},
+		{x: -1.47455, y: 1.6368, z: 0, c1x: -2.0956, c1y: 0.370912, c1z: 0, c2x: 0.69178, c2y: 0.287735, c2z: 0},
+		{x: 0.126421, y: -3.56118, z: 0, c1x: -0.69178, c1y: -0.287735, c1z: 0, c2x: -1.60803, c2y: 0.871482, c2z: 0},
+		{x: 6.56562, y: -2.72061, z: 0, c1x: 1.60803, c1y: -0.871482, c1z: 0, c2x: -1.37935, c2y: 0.559632, c2z: 0},
+		{x: 7.02315, y: -6.35934, z: 0, c1x: 1.37935, c1y: -0.559632, c1z: 0, c2x: 1.09925, c2y: 0.314799, c2z: 0},
+		{x: 1.06936, y: -4.2946, z: 0, c1x: -1.09925, c1y: -0.314799, c1z: 0, c2x: 1.15405, c2y: -1.62663, c2z: 0},
+		{x: 1.25291, y: 1.7738, z: 0, c1x: -1.15405, c1y: 1.62663, c1z: 0, c2x: -1.24138, c2y: -1.54582, c2z: 0},
+		{x: 7.27628, y: 3.43447, z: 0, c1x: 1.24138, c1y: 1.54582, c1z: 0, c2x: 0.250581, c2y: 0.354759, c2z: 0},
+		{x: 0, y: 0, z: 0, c1x: -0.250581, c1y: -0.354759, c1z: 0, c2x: 1.60364, c2y: -0.539033, c2z: 0},
+	];
+	for(var i = 0 ; i < points51.length ; i++)
+		run("setpointat current " + i + " " + points51[i].x + " " + points51[i].y + " " + points51[i].z + " " + points51[i].c1x + " " + points51[i].c1y + " " + points51[i].c1z + " " + points51[i].c2x + " " + points51[i].c2y + " " + points51[i].c2z);
+	run("add cursor 52");
+	run("setcurve current lastCurve");
+	run("setpos current -4.1029 0.155315 0");
+	run("setpattern current 0 0 1");
+
+
+	run("add curve 15");
+	run("setpos current -5.29365 -2.84744 0");
+	var points15 = [
+		{x: 0, y: 0, z: 0, c1x: 0, c1y: 0, c1z: 0, c2x: 0, c2y: 0, c2z: 0},
+		{x: 0.88668, y: 1.6187, z: 0, c1x: 0.177336, c1y: 0.323739, c1z: 0, c2x: -0.411556, c2y: -0.613976, c2z: 0},
+		{x: 2.05778, y: 3.06988, z: 0, c1x: 0.411556, c1y: 0.613976, c1z: 0, c2x: -0.518072, c2y: -0.528577, c2z: 0},
+		{x: 3.47704, y: 4.26158, z: 0, c1x: 0.518072, c1y: 0.528577, c1z: 0, c2x: -0.623122, c2y: -0.393436, c2z: 0},
+		{x: 5.17339, y: 5.03706, z: 0, c1x: 0.623122, c1y: 0.393436, c1z: 0, c2x: -0.707361, c2y: -0.207853, c2z: 0},
+		{x: 7.01384, y: 5.30085, z: 0, c1x: 0.707361, c1y: 0.207853, c1z: 0, c2x: -0.686781, c2y: 0.114838, c2z: 0},
+		{x: 8.6073, y: 4.46287, z: 0, c1x: 0.686781, c1y: -0.114838, c1z: 0, c2x: -0.540143, c2y: 0.465301, c2z: 0},
+		{x: 9.71456, y: 2.97434, z: 0, c1x: 0.540143, c1y: -0.465301, c1z: 0, c2x: -0.297285, c2y: 0.659992, c2z: 0},
+		{x: 10.0937, y: 1.16291, z: 0, c1x: 0.297285, c1y: -0.659992, c1z: 0, c2x: -0.11271, c2y: 0.728088, c2z: 0},
+		{x: 10.2781, y: -0.666097, z: 0, c1x: 0.11271, c1y: -0.728088, c1z: 0, c2x: 0.0617786, c2y: 0.682994, c2z: 0},
+		{x: 9.78483, y: -2.25206, z: 0, c1x: -0.0617786, c1y: -0.682994, c1z: 0, c2x: 0.0986561, c2y: 0.317192, c2z: 0},
+	];
+	for(var i = 0 ; i < points15.length ; i++)
+		run("setpointat current " + i + " " + points15[i].x + " " + points15[i].y + " " + points15[i].z + " " + points15[i].c1x + " " + points15[i].c1y + " " + points15[i].c1z + " " + points15[i].c2x + " " + points15[i].c2y + " " + points15[i].c2z);
+	run("add cursor 16");
+	run("setcurve current lastCurve");
+	run("setpos current 4.49118 -5.0995 0");
+	run("setpattern current 5 0 1 0");
+
+
+	run("add curve 17");
+	run("setpos current -5.39719 -3.02864 0");
+	var points17 = [
+		{x: 0, y: 0, z: 0, c1x: 0, c1y: 0, c1z: 0, c2x: 0, c2y: 0, c2z: 0},
+		{x: 0.544062, y: -0.927405, z: 0, c1x: 0.108812, c1y: -0.185481, c1z: 0, c2x: -0.278745, c2y: 0.32221, c2z: 0},
+		{x: 1.39373, y: -1.61105, z: 0, c1x: 0.278745, c1y: -0.32221, c1z: 0, c2x: -0.363852, c2y: 0.252604, c2z: 0},
+		{x: 2.36332, y: -2.19042, z: 0, c1x: 0.363852, c1y: -0.252604, c1z: 0, c2x: -0.39712, c2y: 0.182608, c2z: 0},
+		{x: 3.37933, y: -2.52409, z: 0, c1x: 0.39712, c1y: -0.182608, c1z: 0, c2x: -0.415196, c2y: 0.132975, c2z: 0},
+		{x: 4.4393, y: -2.8553, z: 0, c1x: 0.415196, c1y: -0.132975, c1z: 0, c2x: -0.428837, c2y: 0.110999, c2z: 0},
+		{x: 5.52351, y: -3.07908, z: 0, c1x: 0.428837, c1y: -0.110999, c1z: 0, c2x: -0.434162, c2y: 0.0197442, c2z: 0},
+		{x: 6.61011, y: -2.95402, z: 0, c1x: 0.434162, c1y: -0.0197442, c1z: 0, c2x: -0.431283, c2y: -0.0644067, c2z: 0},
+		{x: 7.67993, y: -2.75705, z: 0, c1x: 0.431283, c1y: 0.0644067, c1z: 0, c2x: -0.430179, c2y: -0.0795357, c2z: 0},
+		{x: 8.76101, y: -2.55634, z: 0, c1x: 0.430179, c1y: 0.0795357, c1z: 0, c2x: -0.405448, c2y: -0.137238, c2z: 0},
+		{x: 9.70717, y: -2.07086, z: 0, c1x: 0.405448, c1y: 0.137238, c1z: 0, c2x: -0.189232, c2y: -0.0970961, c2z: 0},
+	];
+	for(var i = 0 ; i < points17.length ; i++)
+		run("setpointat current " + i + " " + points17[i].x + " " + points17[i].y + " " + points17[i].z + " " + points17[i].c1x + " " + points17[i].c1y + " " + points17[i].c1z + " " + points17[i].c2x + " " + points17[i].c2y + " " + points17[i].c2z);
+	run("add cursor 18");
+	run("setcurve current lastCurve");
+	run("setpos current 4.30998 -5.0995 0");
+	run("setpattern current 5 0 1 0");
+
+
+	run("add curve 19");
+	run("setpos current -5.29365 -2.84744 0");
+	var points19 = [
+		{x: 0, y: 0, z: 0, c1x: 0, c1y: 0, c1z: 0, c2x: 0, c2y: 0, c2z: 0},
+		{x: 1.04281, y: 0.730053, z: 0, c1x: 0.208562, c1y: 0.146011, c1z: 0, c2x: -0.455319, c2y: -0.240496, c2z: 0},
+		{x: 2.2766, y: 1.20248, z: 0, c1x: 0.455319, c1y: 0.240496, c1z: 0, c2x: -0.506964, c2y: -0.163245, c2z: 0},
+		{x: 3.57763, y: 1.54628, z: 0, c1x: 0.506964, c1y: 0.163245, c1z: 0, c2x: -0.507927, c2y: -0.158234, c2z: 0},
+		{x: 4.81623, y: 1.99365, z: 0, c1x: 0.507927, c1y: 0.158234, c1z: 0, c2x: -0.511428, c2y: -0.120908, c2z: 0},
+		{x: 6.13477, y: 2.15082, z: 0, c1x: 0.511428, c1y: 0.120908, c1z: 0, c2x: -0.530134, c2y: -0.02441, c2z: 0},
+		{x: 7.4669, y: 2.1157, z: 0, c1x: 0.530134, c1y: 0.02441, c1z: 0, c2x: -0.511234, c2y: 0.0949422, c2z: 0},
+		{x: 8.69094, y: 1.67611, z: 0, c1x: 0.511234, c1y: -0.0949422, c1z: 0, c2x: -0.396903, c2y: 0.300024, c2z: 0},
+		{x: 9.45141, y: 0.615579, z: 0, c1x: 0.396903, c1y: -0.300024, c1z: 0, c2x: -0.265847, c2y: 0.450589, c2z: 0},
+		{x: 10.0202, y: -0.576838, z: 0, c1x: 0.265847, c1y: -0.450589, c1z: 0, c2x: -0.206458, c2y: 0.475162, c2z: 0},
+		{x: 10.4837, y: -1.76023, z: 0, c1x: 0.206458, c1y: -0.475162, c1z: 0, c2x: -0.0927052, c2y: 0.236678, c2z: 0},
+	];
+	for(var i = 0 ; i < points19.length ; i++)
+		run("setpointat current " + i + " " + points19[i].x + " " + points19[i].y + " " + points19[i].z + " " + points19[i].c1x + " " + points19[i].c1y + " " + points19[i].c1z + " " + points19[i].c2x + " " + points19[i].c2y + " " + points19[i].c2z);
+	run("add cursor 20");
+	run("setcurve current lastCurve");
+	run("setpos current 5.19005 -4.60767 0");
+	run("setpattern current 5 0 1 0");
+
+
+	run("add curve 21");
+	run("setpos current -5.31953 -2.9251 0");
+	var points21 = [
+		{x: 0, y: 0, z: 0, c1x: 0, c1y: 0, c1z: 0, c2x: 0, c2y: 0, c2z: 0},
+		{x: 1.39837, y: 0.687491, z: 0, c1x: 0.279675, c1y: 0.137498, c1z: 0, c2x: -0.593257, c2y: -0.12009, c2z: 0},
+		{x: 2.96628, y: 0.60045, z: 0, c1x: 0.593257, c1y: 0.12009, c1z: 0, c2x: -0.447161, c2y: 0.279971, c2z: 0},
+		{x: 3.63418, y: -0.712363, z: 0, c1x: 0.447161, c1y: -0.279971, c1z: 0, c2x: -0.271763, c2y: 0.54117, c2z: 0},
+		{x: 4.3251, y: -2.1054, z: 0, c1x: 0.271763, c1y: -0.54117, c1z: 0, c2x: -0.412015, c2y: 0.31028, c2z: 0},
+		{x: 5.69425, y: -2.26376, z: 0, c1x: 0.412015, c1y: -0.31028, c1z: 0, c2x: -0.295432, c2y: -0.27683, c2z: 0},
+		{x: 5.80226, y: -0.721252, z: 0, c1x: 0.295432, c1y: 0.27683, c1z: 0, c2x: -0.193927, c2y: -0.561176, c2z: 0},
+		{x: 6.66389, y: 0.542118, z: 0, c1x: 0.193927, c1y: 0.561176, c1z: 0, c2x: -0.448536, c2y: -0.277253, c2z: 0},
+		{x: 8.04494, y: 0.665011, z: 0, c1x: 0.448536, c1y: 0.277253, c1z: 0, c2x: -0.494522, c2y: 0.205247, c2z: 0},
+		{x: 9.1365, y: -0.484115, z: 0, c1x: 0.494522, c1y: -0.205247, c1z: 0, c2x: -0.389396, c2y: 0.479872, c2z: 0},
+		{x: 9.99192, y: -1.73435, z: 0, c1x: 0.389396, c1y: -0.479872, c1z: 0, c2x: -0.171085, c2y: 0.250047, c2z: 0},
+	];
+	for(var i = 0 ; i < points21.length ; i++)
+		run("setpointat current " + i + " " + points21[i].x + " " + points21[i].y + " " + points21[i].z + " " + points21[i].c1x + " " + points21[i].c1y + " " + points21[i].c1z + " " + points21[i].c2x + " " + points21[i].c2y + " " + points21[i].c2z);
+	run("add cursor 22");
+	run("setcurve current lastCurve");
+	run("setpos current 4.67239 -4.65945 0");
+	run("setpattern current 5 0 1 0");
+
+
+	run("add curve 23");
+	run("setpos current -5.3713 -2.89921 0");
+	var points23 = [
+		{x: 0, y: 0, z: 0, c1x: 0, c1y: 0, c1z: 0, c2x: 0, c2y: 0, c2z: 0},
+		{x: -0.627395, y: 2.16349, z: 0, c1x: -0.125479, c1y: 0.432698, c1z: 0, c2x: 0.0466785, c2y: -0.873132, c2z: 0},
+		{x: -0.233393, y: 4.36566, z: 0, c1x: -0.0466785, c1y: 0.873132, c1z: 0, c2x: -0.382082, c2y: -0.752908, c2z: 0},
+		{x: 1.28301, y: 5.92803, z: 0, c1x: 0.382082, c1y: 0.752908, c1z: 0, c2x: -0.733371, c2y: -0.466667, c2z: 0},
+		{x: 3.43346, y: 6.69899, z: 0, c1x: 0.733371, c1y: 0.466667, c1z: 0, c2x: -0.879517, c2y: -0.20306, c2z: 0},
+		{x: 5.6806, y: 6.94333, z: 0, c1x: 0.879517, c1y: 0.20306, c1z: 0, c2x: -0.87733, c2y: 0.0959878, c2z: 0},
+		{x: 7.82011, y: 6.21905, z: 0, c1x: 0.87733, c1y: -0.0959878, c1z: 0, c2x: -0.718656, c2y: 0.484936, c2z: 0},
+		{x: 9.27388, y: 4.51865, z: 0, c1x: 0.718656, c1y: -0.484936, c1z: 0, c2x: -0.489644, c2y: 0.754417, c2z: 0},
+		{x: 10.2683, y: 2.44697, z: 0, c1x: 0.489644, c1y: -0.754417, c1z: 0, c2x: -0.226101, c2y: 0.870168, c2z: 0},
+		{x: 10.4044, y: 0.167807, z: 0, c1x: 0.226101, c1y: -0.870168, c1z: 0, c2x: -0.0586132, c2y: 0.893211, c2z: 0},
+		{x: 10.5614, y: -2.01909, z: 0, c1x: 0.0586132, c1y: -0.893211, c1z: 0, c2x: -0.0314034, c2y: 0.437379, c2z: 0},
+	];
+	for(var i = 0 ; i < points23.length ; i++)
+		run("setpointat current " + i + " " + points23[i].x + " " + points23[i].y + " " + points23[i].z + " " + points23[i].c1x + " " + points23[i].c1y + " " + points23[i].c1z + " " + points23[i].c2x + " " + points23[i].c2y + " " + points23[i].c2z);
+	run("add cursor 24");
+	run("setcurve current lastCurve");
+	run("setpos current 5.1901 -4.9183 0");
+	run("setpattern current 5 0 1 0");
+
+
+	run("add curve 25");
+	run("setpos current -5.42307 -2.82155 0");
+	var points25 = [
+		{x: 0, y: 0, z: 0, c1x: 0, c1y: 0, c1z: 0, c2x: 0, c2y: 0, c2z: 0},
+		{x: 1.17782, y: -1.0221, z: 0, c1x: 0.235565, c1y: -0.20442, c1z: 0, c2x: -0.538959, c2y: 0.262116, c2z: 0},
+		{x: 2.69479, y: -1.31058, z: 0, c1x: 0.538959, c1y: -0.262116, c1z: 0, c2x: -0.598265, c2y: -0.0592924, c2z: 0},
+		{x: 4.16915, y: -0.725636, z: 0, c1x: 0.598265, c1y: 0.0592924, c1z: 0, c2x: -0.598236, c2y: -0.196535, c2z: 0},
+		{x: 5.68597, y: -0.327903, z: 0, c1x: 0.598236, c1y: 0.196535, c1z: 0, c2x: -0.614371, c2y: -0.136303, c2z: 0},
+		{x: 7.241, y: -0.0441198, z: 0, c1x: 0.614371, c1y: 0.136303, c1z: 0, c2x: -0.62292, c2y: -0.0914046, c2z: 0},
+		{x: 8.80057, y: 0.12912, z: 0, c1x: 0.62292, c1y: 0.0914046, c1z: 0, c2x: -0.571671, c2y: 0.148009, c2z: 0},
+		{x: 10.0994, y: -0.784164, z: 0, c1x: 0.571671, c1y: -0.148009, c1z: 0, c2x: -0.280156, c2y: 0.469904, c2z: 0},
+		{x: 10.2014, y: -2.2204, z: 0, c1x: 0.280156, c1y: -0.469904, c1z: 0, c2x: 0.0846443, c2y: 0.539211, c2z: 0},
+		{x: 9.67614, y: -3.48022, z: 0, c1x: -0.0846443, c1y: -0.539211, c1z: 0, c2x: -0.07201, c2y: 0.182356, c2z: 0},
+		{x: 10.5614, y: -3.13218, z: 0, c1x: 0.07201, c1y: -0.182356, c1z: 0, c2x: -0.177053, c2y: -0.0696075, c2z: 0},
+	];
+	for(var i = 0 ; i < points25.length ; i++)
+		run("setpointat current " + i + " " + points25[i].x + " " + points25[i].y + " " + points25[i].z + " " + points25[i].c1x + " " + points25[i].c1y + " " + points25[i].c1z + " " + points25[i].c2x + " " + points25[i].c2y + " " + points25[i].c2z);
+	run("add cursor 26");
+	run("setcurve current lastCurve");
+	run("setpos current 5.13833 -5.95373 0");
+	run("setpattern current 5 0 1 0");
+
+
+	run("add curve 27");
+	run("setpos current -5.26776 6.10905 0");
+	var points27 = [
+		{x: 0, y: 0, z: 0, c1x: 0, c1y: 0, c1z: 0, c2x: 0, c2y: 0, c2z: 0},
+		{x: -0.312412, y: -1.97129, z: 0, c1x: -0.0624824, c1y: -0.394259, c1z: 0, c2x: 0.0669362, c2y: 0.793584, c2z: 0},
+		{x: -0.334681, y: -3.96792, z: 0, c1x: -0.0669362, c1y: -0.793584, c1z: 0, c2x: 0.00482064, c2y: 0.798467, c2z: 0},
+		{x: -0.336515, y: -5.96363, z: 0, c1x: -0.00482064, c1y: -0.798467, c1z: 0, c2x: -0.0283983, c2y: 0.79894, c2z: 0},
+		{x: -0.19269, y: -7.96262, z: 0, c1x: 0.0283983, c1y: -0.79894, c1z: 0, c2x: -0.159397, c2y: 0.779865, c2z: 0},
+		{x: 0.460468, y: -9.86295, z: 0, c1x: 0.159397, c1y: -0.779865, c1z: 0, c2x: -0.476038, c2y: 0.55733, c2z: 0},
+		{x: 2.1875, y: -10.7493, z: 0, c1x: 0.476038, c1y: -0.55733, c1z: 0, c2x: -0.731527, c2y: 0.298702, c2z: 0},
+		{x: 4.1181, y: -11.3565, z: 0, c1x: 0.731527, c1y: -0.298702, c1z: 0, c2x: -0.767607, c2y: 0.222447, c2z: 0},
+		{x: 6.02553, y: -11.8615, z: 0, c1x: 0.767607, c1y: -0.222447, c1z: 0, c2x: -0.771258, c2y: 0.146124, c2z: 0},
+		{x: 7.97439, y: -12.0871, z: 0, c1x: 0.771258, c1y: -0.146124, c1z: 0, c2x: -0.772567, c2y: -0.0425804, c2z: 0},
+		{x: 9.88837, y: -11.6486, z: 0, c1x: 0.772567, c1y: 0.0425804, c1z: 0, c2x: -0.382795, c2y: -0.0876966, c2z: 0},
+	];
+	for(var i = 0 ; i < points27.length ; i++)
+		run("setpointat current " + i + " " + points27[i].x + " " + points27[i].y + " " + points27[i].z + " " + points27[i].c1x + " " + points27[i].c1y + " " + points27[i].c1z + " " + points27[i].c2x + " " + points27[i].c2y + " " + points27[i].c2z);
+	run("add cursor 28");
+	run("setcurve current lastCurve");
+	run("setpos current 4.62061 -5.53955 0");
+	run("setpattern current 5 0 1 0");
+
+
+	run("add curve 29");
+	run("setpos current -5.1901 6.05728 0");
+	var points29 = [
+		{x: 0, y: 0, z: 0, c1x: 0, c1y: 0, c1z: 0, c2x: 0, c2y: 0, c2z: 0},
+		{x: 1.9351, y: 0.107238, z: 0, c1x: 0.387019, c1y: 0.0214476, c1z: 0, c2x: -0.769843, c2y: -0.0418015, c2z: 0},
+		{x: 3.84922, y: 0.209007, z: 0, c1x: 0.769843, c1y: 0.0418015, c1z: 0, c2x: -0.763097, c2y: 0.00148387, c2z: 0},
+		{x: 5.75058, y: 0.0998185, z: 0, c1x: 0.763097, c1y: -0.00148387, c1z: 0, c2x: -0.752582, c2y: 0.108825, c2z: 0},
+		{x: 7.61213, y: -0.335118, z: 0, c1x: 0.752582, c1y: -0.108825, c1z: 0, c2x: -0.645246, c2y: 0.33832, c2z: 0},
+		{x: 8.97681, y: -1.59178, z: 0, c1x: 0.645246, c1y: -0.33832, c1z: 0, c2x: -0.4204, c2y: 0.617729, c2z: 0},
+		{x: 9.71412, y: -3.42376, z: 0, c1x: 0.4204, c1y: -0.617729, c1z: 0, c2x: -0.263096, c2y: 0.724658, c2z: 0},
+		{x: 10.2923, y: -5.21507, z: 0, c1x: 0.263096, c1y: -0.724658, c1z: 0, c2x: -0.17047, c2y: 0.736213, c2z: 0},
+		{x: 10.5665, y: -7.10483, z: 0, c1x: 0.17047, c1y: -0.736213, c1z: 0, c2x: -0.00967464, c2y: 0.763463, c2z: 0},
+		{x: 10.3407, y: -9.03239, z: 0, c1x: 0.00967464, c1y: -0.763463, c1z: 0, c2x: 0.125265, c2y: 0.758614, c2z: 0},
+		{x: 9.94015, y: -10.8979, z: 0, c1x: -0.125265, c1y: -0.758614, c1z: 0, c2x: 0.0801029, c2y: 0.373103, c2z: 0},
+	];
+	for(var i = 0 ; i < points29.length ; i++)
+		run("setpointat current " + i + " " + points29[i].x + " " + points29[i].y + " " + points29[i].z + " " + points29[i].c1x + " " + points29[i].c1y + " " + points29[i].c1z + " " + points29[i].c2x + " " + points29[i].c2y + " " + points29[i].c2z);
+	run("add cursor 30");
+	run("setcurve current lastCurve");
+	run("setpos current 4.75005 -4.84062 0");
+	run("setpattern current 5 0 1 0");
+
+
+	run("add curve 31");
+	run("setpos current -5.42307 5.92785 0");
+	var points31 = [
+		{x: 0, y: 0, z: 0, c1x: 0, c1y: 0, c1z: 0, c2x: 0, c2y: 0, c2z: 0},
+		{x: 0.154051, y: -1.77036, z: 0, c1x: 0.0308101, c1y: -0.354072, c1z: 0, c2x: -0.0274487, c2y: 0.753716, c2z: 0},
+		{x: 0.137243, y: -3.76858, z: 0, c1x: 0.0274487, c1y: -0.753716, c1z: 0, c2x: -0.239433, c2y: 0.70248, c2z: 0},
+		{x: 1.35121, y: -5.28276, z: 0, c1x: 0.239433, c1y: -0.70248, c1z: 0, c2x: -0.635738, c2y: 0.277655, c2z: 0},
+		{x: 3.31593, y: -5.15685, z: 0, c1x: 0.635738, c1y: -0.277655, c1z: 0, c2x: -0.779133, c2y: -0.129219, c2z: 0},
+		{x: 5.24688, y: -4.63666, z: 0, c1x: 0.779133, c1y: 0.129219, c1z: 0, c2x: -0.772798, c2y: -0.124889, c2z: 0},
+		{x: 7.17992, y: -4.53241, z: 0, c1x: 0.772798, c1y: 0.124889, c1z: 0, c2x: -0.727471, c2y: 0.146367, c2z: 0},
+		{x: 8.88423, y: -5.3685, z: 0, c1x: 0.727471, c1y: -0.146367, c1z: 0, c2x: -0.562745, c2y: 0.495895, c2z: 0},
+		{x: 9.99365, y: -7.01189, z: 0, c1x: 0.562745, c1y: -0.495895, c1z: 0, c2x: -0.339059, c2y: 0.713184, c2z: 0},
+		{x: 10.5795, y: -8.93442, z: 0, c1x: 0.339059, c1y: -0.713184, c1z: 0, c2x: -0.0876707, c2y: 0.772023, c2z: 0},
+		{x: 10.432, y: -10.872, z: 0, c1x: 0.0876707, c1y: -0.772023, c1z: 0, c2x: 0.0295053, c2y: 0.387517, c2z: 0},
+	];
+	for(var i = 0 ; i < points31.length ; i++)
+		run("setpointat current " + i + " " + points31[i].x + " " + points31[i].y + " " + points31[i].z + " " + points31[i].c1x + " " + points31[i].c1y + " " + points31[i].c1z + " " + points31[i].c2x + " " + points31[i].c2y + " " + points31[i].c2z);
+	run("add cursor 32");
+	run("setcurve current lastCurve");
+	run("setpos current 5.00893 -4.94415 0");
+	run("setpattern current 5 0 1 0");
+
+
+	run("add curve 33");
+	run("setpos current -4.87947 5.85019 0");
+	var points33 = [
+		{x: 0, y: 0, z: 0, c1x: 0, c1y: 0, c1z: 0, c2x: 0, c2y: 0, c2z: 0},
+		{x: 1.78861, y: 0.480568, z: 0, c1x: 0.357723, c1y: 0.0961136, c1z: 0, c2x: -0.719915, c2y: -0.138585, c2z: 0},
+		{x: 3.59957, y: 0.692923, z: 0, c1x: 0.719915, c1y: 0.138585, c1z: 0, c2x: -0.730515, c2y: 0.0159685, c2z: 0},
+		{x: 5.44119, y: 0.400725, z: 0, c1x: 0.730515, c1y: -0.0159685, c1z: 0, c2x: -0.675734, c2y: 0.281985, c2z: 0},
+		{x: 6.97824, y: -0.717001, z: 0, c1x: 0.675734, c1y: -0.281985, c1z: 0, c2x: -0.567028, c2y: 0.496058, c2z: 0},
+		{x: 8.27633, y: -2.07956, z: 0, c1x: 0.567028, c1y: -0.496058, c1z: 0, c2x: -0.451209, c2y: 0.5726, c2z: 0},
+		{x: 9.23429, y: -3.58, z: 0, c1x: 0.451209, c1y: -0.5726, c1z: 0, c2x: -0.281343, c2y: 0.660033, c2z: 0},
+		{x: 9.68305, y: -5.37973, z: 0, c1x: 0.281343, c1y: -0.660033, c1z: 0, c2x: -0.110558, c2y: 0.719753, c2z: 0},
+		{x: 9.78708, y: -7.17877, z: 0, c1x: 0.110558, c1y: -0.719753, c1z: 0, c2x: -0.0104162, c2y: 0.741389, c2z: 0},
+		{x: 9.73513, y: -9.08668, z: 0, c1x: 0.0104162, c1y: -0.741389, c1z: 0, c2x: -0.00472889, c2y: 0.743826, c2z: 0},
+		{x: 9.81072, y: -10.8979, z: 0, c1x: 0.00472889, c1y: -0.743826, c1z: 0, c2x: -0.0151188, c2y: 0.362245, c2z: 0},
+	];
+	for(var i = 0 ; i < points33.length ; i++)
+		run("setpointat current " + i + " " + points33[i].x + " " + points33[i].y + " " + points33[i].z + " " + points33[i].c1x + " " + points33[i].c1y + " " + points33[i].c1z + " " + points33[i].c2x + " " + points33[i].c2y + " " + points33[i].c2z);
+	run("add cursor 34");
+	run("setcurve current lastCurve");
+	run("setpos current 4.93125 -5.04771 0");
+	run("setpattern current 5 0 1 0");
+
+
+	run("add curve 35");
+	run("setpos current -5.26776 5.95373 0");
+	var points35 = [
+		{x: 0, y: 0, z: 0, c1x: 0, c1y: 0, c1z: 0, c2x: 0, c2y: 0, c2z: 0},
+		{x: -0.648948, y: -1.99026, z: 0, c1x: -0.12979, c1y: -0.398052, c1z: 0, c2x: -0.0461944, c2y: 0.737358, c2z: 0},
+		{x: 0.230972, y: -3.68679, z: 0, c1x: 0.0461944, c1y: -0.737358, c1z: 0, c2x: -0.566898, c2y: 0.377211, c2z: 0},
+		{x: 2.18554, y: -3.87631, z: 0, c1x: 0.566898, c1y: -0.377211, c1z: 0, c2x: -0.486147, c2y: 0.441948, c2z: 0},
+		{x: 2.66171, y: -5.89653, z: 0, c1x: 0.486147, c1y: -0.441948, c1z: 0, c2x: -0.0287824, c2y: 0.826758, c2z: 0},
+		{x: 2.32945, y: -8.0101, z: 0, c1x: 0.0287824, c1y: -0.826758, c1z: 0, c2x: 0.0314767, c2y: 0.855006, c2z: 0},
+		{x: 2.50432, y: -10.1716, z: 0, c1x: -0.0314767, c1y: -0.855006, c1z: 0, c2x: -0.271001, c2y: 0.761493, c2z: 0},
+		{x: 3.68446, y: -11.8176, z: 0, c1x: 0.271001, c1y: -0.761493, c1z: 0, c2x: -0.666613, c2y: 0.345349, c2z: 0},
+		{x: 5.83739, y: -11.8983, z: 0, c1x: 0.666613, c1y: -0.345349, c1z: 0, c2x: -0.848379, c2y: -0.0800764, c2z: 0},
+		{x: 7.92636, y: -11.4172, z: 0, c1x: 0.848379, c1y: 0.0800764, c1z: 0, c2x: -0.830907, c2y: -0.158661, c2z: 0},
+		{x: 9.99192, y: -11.105, z: 0, c1x: 0.830907, c1y: 0.158661, c1z: 0, c2x: -0.413113, c2y: -0.0624374, c2z: 0},
+	];
+	for(var i = 0 ; i < points35.length ; i++)
+		run("setpointat current " + i + " " + points35[i].x + " " + points35[i].y + " " + points35[i].z + " " + points35[i].c1x + " " + points35[i].c1y + " " + points35[i].c1z + " " + points35[i].c2x + " " + points35[i].c2y + " " + points35[i].c2z);
+	run("add cursor 36");
+	run("setcurve current lastCurve");
+	run("setpos current 4.72416 -5.15127 0");
+	run("setpattern current 5 0 1 0");
+
+
+
+
+//GUI: NEVER EVER REMOVE THIS LINE
+}
+
+
+/*
+ *	This method stores all the operations made by other softwares through one of the IanniX interfaces.
+ *	You are not supposed to modify this section, but it can be useful to remove some stuff that you or a third party software added accidentaly.
+ *	
+ * 	Be very careful! This section is automaticaly overwritten when saving a score.
+ */
+function madeThroughInterfaces() {
+//INTERFACES: NEVER EVER REMOVE THIS LINE
+	run("setspeedf 38 15");
+	run("settime 38 2670");
+
+
+	run("setspeedf 2 4.5");
+
+
+	run("setspeedf 40 11");
+	run("settime 40 1925.22");
+
+
+	run("setspeedf 4 16");
+	run("settime 4 2102.064");
+
+
+	run("setspeedf 42 20");
+	run("settime 42 3520.8");
+
+
+	run("setspeedf 6 15");
+	run("settime 6 1941.59999999999");
+
+
+	run("setspeedf 44 21");
+	run("settime 44 16981.1249999879");
+
+
+	run("setspeedf 8 11");
+	run("settime 8 1385.34");
+
+
+	run("setspeedf 46 21");
+	run("settime 46 15927.7649999888");
+
+
+	run("setspeedf 10 15");
+	run("settime 10 1912.8");
+
+
+	run("setspeedf 48 11");
+	run("settime 48 4933.04899999905");
+
+
+	run("setspeedf 12 13");
+	run("settime 12 1583.725");
+
+
+	run("setspeedf 50 15");
+	run("settime 50 5526.8999999988");
+
+
+	run("setspeedf 14 13");
+	run("settime 14 1561.144");
+
+
+	run("setspeedf 52 3");
+
+
+	run("setspeedf 16 18");
+	run("settime 16 3709.44");
+
+
+	run("setspeedf 18 14");
+	run("settime 18 2865.31");
+
+
+	run("setspeedf 20 16");
+	run("settime 20 3201.28");
+
+
+	run("setspeedf 22 21");
+	run("settime 22 4230.63900000005");
+
+
+	run("setspeedf 24 16");
+	run("settime 24 3147.52");
+
+
+	run("setspeedf 26 20");
+	run("settime 26 3898.89999999999");
+
+
+	run("setspeedf 28 15");
+	run("settime 28 2837.4");
+
+
+	run("setspeedf 30 21");
+	run("settime 30 3537.639");
+
+
+	run("setspeedf 32 13");
+	run("settime 32 2140.905");
+
+
+	run("setspeedf 34 13");
+	run("settime 34 2368.145");
+
+
+	run("setspeedf 36 15");
+	run("settime 36 2697.975");
+
+
+
+
+//INTERFACES: NEVER EVER REMOVE THIS LINE
+}
+
+
+/*
+ *	This method is called last.
+ *	It allows you to modify your hand-drawn score (made through graphical user interface).
+ *	
+ * 	This section is never overwritten by IanniX when saving.
+ */
+function alterateWithScript() {
+	
+}
+
+
+/*
+ *	//APP VERSION: NEVER EVER REMOVE THIS LINE
+ *	Made with IanniX 0.9.16
+ *	//APP VERSION: NEVER EVER REMOVE THIS LINE
+ */
+
