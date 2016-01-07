@@ -1,5 +1,3 @@
-![Schéma de communication visuel](../doc/schema_visuel.png)
-
 ### Ordinateur data 
 Lancer : 
 - arbres
@@ -12,3 +10,5 @@ Lancer :
 Lancer : 
 - clocher
 - clocher_out
+
+![Schéma de communication visuel](../doc/schema_visuel.png)
