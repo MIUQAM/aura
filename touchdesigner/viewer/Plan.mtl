@@ -1,0 +1,31 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2012 Trimble Navigation Limited
+
+newmtl FrontColor
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.330000 0.330000 0.330000
+
+newmtl _5
+Ka 0.000000 0.000000 0.000000
+Kd 0.000000 0.176471 1.000000
+Ks 0.330000 0.330000 0.330000
+
+newmtl armstrong_columnar_red_maple
+Ka 0.000000 0.000000 0.000000
+Kd 0.454902 0.501961 0.333333
+Ks 0.330000 0.330000 0.330000
+map_Kd Plan/armstrong_columnar_red_maple.png
+
+newmtl material4
+Ka 0.000000 0.000000 0.000000
+Kd 0.698039 0.698039 0.698039
+Ks 0.330000 0.330000 0.330000
+
+newmtl Plan_Enviro_copie
+Ka 0.000000 0.000000 0.000000
+Kd 0.501961 0.501961 0.501961
+Ks 0.000000 0.000000 0.000000
+map_Kd Plan/Plan_Enviro_copie.jpg
+
