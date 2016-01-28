@@ -1,0 +1,11 @@
+start master/master.toe
+timeout 1
+start master_in/master_in.toe
+timeout 1
+start arbres/arbres.toe
+timeout 1
+start lanternes/lanternes.toe
+timeout 1
+start riviere/riviere.toe
+timeout 1
+start saules/saules.toe
