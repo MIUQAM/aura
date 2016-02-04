@@ -1,0 +1,364 @@
+/*
+ *	IanniX Score File
+ */
+
+
+/*
+ *	This method is called first.
+ *	It is the good section for asking user for script global variables (parameters).
+ *	
+ * 	This section is never overwritten by IanniX when saving.
+ */
+function askUserForParameters() {
+	//title("The title of the parameter box");
+	//ask("Group name of the parameter (only for display purposes)", "Parameter label", "myGlobalVar", "theDefaultValue");
+}
+
+
+/*
+ *	This method stores all the operations made through IanniX scripts.
+ *	You can add some commands here to make your own scripts!
+ *	Scripts are written in Javascript but even with a limited knowledge of Javascript, many types of useful scripts can be created.
+ *	
+ *	Beyond the standard javascript commands, the run() function is used to send commands to IanniX.
+ *	Commands must be provided to run() as a single string.
+ *	For example, run("zoom 100"); sets the display zoom to 100%.
+ *	
+ *	To combine numeric parameters with text commands to produce a string, use the concatenation operator.
+ *	In the following example center_x and center_y are in numeric variables and must be concatenated to the command string.
+ *	Example: run("setPos current " + center_x + " " + center_y + " 0");
+ *	
+ *	To learn IanniX commands, perform an manipulation in IanniX graphical user interface, and see the Helper window.
+ *	You'll see the syntax of the command-equivalent action.
+ *	
+ *	And finally, remember that most of commands must target an object.
+ *	Global syntax is always run("<command name> <target> <arguments>");
+ *	Targets can be an ID (number) or a Group ID (string name of group) (please see "Info" tab in Inspector panel).
+ *	Special targets are "current" (last used ID), "all" (all the objects) and "lastCurve" (last used curve).
+ *	
+ * 	This section is never overwritten by IanniX when saving.
+ */
+function makeWithScript() {
+	//Clears the score
+	run("clear");
+	//Resets rotation
+	run("rotate 0 0 0");
+	//Resets score viewport center
+	run("center 0 0");
+	//Resets score zoom
+	run("zoom 100");
+}
+
+
+/*
+ *	When an incoming message is received, this method is called.
+ *		- <protocol> tells information about the nature of message ("osc", "midi", "direct…)
+ *		- <host> and <port> gives the origin of message, specially for IP protocols (for OpenSoundControl, UDP or TCP, it is the IP and port of the application that sends the message)
+ *		- <destination> is the supposed destination of message (for OpenSoundControl it is the path, for MIDI it is Control Change or Note on/off…)
+ *		- <values> are an array of arguments contained in the message
+ *	
+ * 	This section is never overwritten by IanniX when saving.
+ */
+function onIncomingMessage(protocol, host, port, destination, values) {
+	//Logs a message in the console (open "Config" tab from Inspector panel and see "Message log")
+	console("Received on '" + protocol + "' (" + host + ":" + port + ") to '" + destination + "', " + values.length + " values : ");
+	
+	//Browses all the arguments and displays them in log window
+	for(var valueIndex = 0 ; valueIndex < values.length ; valueIndex++)
+		console("- arg " + valueIndex + " = " + values[valueIndex]);
+}
+
+
+/*
+ *	This method stores all the operations made through the graphical user interface.
+ *	You are not supposed to modify this section, but it can be useful to remove some stuff that you added accidentaly.
+ *	
+ * 	Be very careful! This section is automaticaly overwritten when saving a score.
+ */
+function madeThroughGUI() {
+//GUI: NEVER EVER REMOVE THIS LINE
+	run("zoom 240.391");
+	run("rotate 0 0 0");
+	run("center 4.74442 0.489816");
+
+
+	run("add curve 41");
+	run("setpos current -14.4222 8.71189 2");
+	var points41 = [
+		{x: 0, y: 0, z: 0, c1x: 0, c1y: 0, c1z: 0, c2x: 0, c2y: 0, c2z: 0},
+		{x: -6.58883, y: -4.53897, z: 0, c1x: -1.87416, c1y: -1.02493, c1z: 0, c2x: 0.79066, c2y: 1.42026, c2z: 0},
+		{x: -3.9533, y: -7.10129, z: 0, c1x: -0.79066, c1y: -1.42026, c1z: 0, c2x: 0.029282, c2y: 1.40563, c2z: 0},
+		{x: -6.73524, y: -11.5671, z: 0, c1x: -0.029282, c1y: -1.40563, c1z: 0, c2x: -0.483182, c2y: 0.878502, c2z: 0},
+		{x: -1.53739, y: -11.4938, z: 0, c1x: 0.483182, c1y: -0.878502, c1z: 0, c2x: -0.907794, c2y: 1.09812, c2z: 0},
+		{x: -2.19627, y: -17.0577, z: 0, c1x: 0.907794, c1y: -1.09812, c1z: 0, c2x: -0.849226, c2y: 0.0732201, c2z: 0},
+		{x: 2.70874, y: -11.8599, z: 0, c1x: 0.849226, c1y: -0.0732201, c1z: 0, c2x: -2.18163, c2y: -0.79066, c2z: 0},
+		{x: 8.71189, y: -13.1044, z: 0, c1x: 2.18163, c1y: 0.79066, c1z: 0, c2x: -0.468538, c2y: -0.658886, c2z: 0},
+		{x: 5.05143, y: -8.56547, z: 0, c1x: 0.468538, c1y: 0.658886, c1z: 0, c2x: 0.204986, c2y: -1.69844, c2z: 0},
+		{x: 7.68696, y: -4.61218, z: 0, c1x: -0.204986, c1y: 1.69844, c1z: 0, c2x: 0.64424, c2y: -0.702808, c2z: 0},
+		{x: 1.83023, y: -5.05143, z: 0, c1x: -0.64424, c1y: 0.702808, c1z: 0, c2x: 0.981002, c2y: -1.03957, c2z: 0},
+		{x: 2.78195, y: 0.585673, z: 0, c1x: -0.981002, c1y: 1.03957, c1z: 0, c2x: 0.366046, c2y: -1.01029, c2z: 0},
+		{x: 0, y: 0, z: 0, c1x: -0.366046, c1y: 1.01029, c1z: 0, c2x: 1.80095, c2y: 0.805301, c2z: 0},
+	];
+	for(var i = 0 ; i < points41.length ; i++)
+		run("setpointat current " + i + " " + points41[i].x + " " + points41[i].y + " " + points41[i].z + " " + points41[i].c1x + " " + points41[i].c1y + " " + points41[i].c1z + " " + points41[i].c2x + " " + points41[i].c2y + " " + points41[i].c2z);
+	run("setgroup current foretA");
+	run("setcoloractive current 255 0 0 255");
+	run("setposz current 2");
+	run("add cursor 42");
+	run("setcurve current lastCurve");
+	run("setpos current -12.143 3.4222 2");
+	run("setpattern current 0 0 1");
+	run("setgroup current foretA");
+	run("setspeedf current -6");
+	run("setmessage current 20, osc://ip_out:port_out/cursor cursor_group_id cursor_label cursor_value_x cursor_value_y , tcp:// cursor cursor_id cursor_group_id cursor_value_x cursor_value_y cursor_value_z cursor_xPos cursor_yPos cursor_zPos ,");
+	run("setlabel current source3");
+	run("setboundssourcemode current 3");
+	run("setboundssource current -22.000 -6.000 -9.000 10.000 1.051 1.051");
+	run("setboundstarget current -5.000 5.000 -6.000 6.000 0.000 0.000");
+	run("settime current -11551.7216820717");
+
+	run("add cursor 73");
+	run("setcurve current lastCurve");
+	run("setpos current -21.1042 -2.2805 2");
+	run("setoffset current 0.5 0 end");
+	run("setgroup current foretA");
+	run("setlabel current source2");
+	run("setspeedf current 5");
+	run("setboundssourcemode current 3");
+	run("setboundssource current -21.000 -5.000 -9.000 10.000 2.251 2.251");
+	run("setboundstarget current -5.000 5.000 -6.000 6.000 0.000 0.000");
+	run("setmessage current 20, osc://ip_out:port_out/cursor cursor_group_id cursor_label cursor_value_x cursor_value_y , tcp:// cursor cursor_id cursor_group_id cursor_value_x cursor_value_y cursor_value_z cursor_xPos cursor_yPos cursor_zPos ,");
+	run("setpattern current 0 0 1");
+	run("settime current 9350.35073065758");
+
+	run("add cursor 74");
+	run("setcurve current lastCurve");
+	run("setpos current -19.4385 -0.237598 2");
+	run("setoffset current 1 0 end");
+	run("setboundssourcemode current 3");
+	run("setboundstarget current -5.000 5.000 -6.000 6.000 0.000 0.000");
+	run("setspeedf current 4");
+	run("setpattern current 0 0 1");
+	run("setgroup current foretA");
+	run("setlabel current source1");
+	run("setmessage current 20, osc://ip_out:port_out/cursor cursor_group_id cursor_label cursor_value_x cursor_value_y , tcp:// cursor cursor_id cursor_group_id cursor_value_x cursor_value_y cursor_value_z cursor_xPos cursor_yPos cursor_zPos ,");
+
+
+	run("add curve 75");
+	run("setpos current 13.3583 8.46663 2");
+	var points75 = [
+		{x: 0, y: 0, z: 0, c1x: 0, c1y: 0, c1z: 0, c2x: 0, c2y: 0, c2z: 0},
+		{x: -4.44466, y: -1.70109, z: 0, c1x: -1.87416, c1y: -1.02493, c1z: 0, c2x: 0.79066, c2y: 1.42026, c2z: 0},
+		{x: -3.9533, y: -7.10129, z: 0, c1x: -0.79066, c1y: -1.42026, c1z: 0, c2x: 0.029282, c2y: 1.40563, c2z: 0},
+		{x: -6.73524, y: -11.5671, z: 0, c1x: -0.029282, c1y: -1.40563, c1z: 0, c2x: -0.483182, c2y: 0.878502, c2z: 0},
+		{x: -1.53739, y: -11.4938, z: 0, c1x: 0.483182, c1y: -0.878502, c1z: 0, c2x: -0.907794, c2y: 1.09812, c2z: 0},
+		{x: -2.19627, y: -17.0577, z: 0, c1x: 0.907794, c1y: -1.09812, c1z: 0, c2x: -0.849226, c2y: 0.0732201, c2z: 0},
+		{x: 2.70874, y: -11.8599, z: 0, c1x: 0.849226, c1y: -0.0732201, c1z: 0, c2x: -2.18163, c2y: -0.79066, c2z: 0},
+		{x: 8.71189, y: -13.1044, z: 0, c1x: 2.18163, c1y: 0.79066, c1z: 0, c2x: -0.468538, c2y: -0.658886, c2z: 0},
+		{x: 5.05143, y: -8.56547, z: 0, c1x: 0.468538, c1y: 0.658886, c1z: 0, c2x: 0.204986, c2y: -1.69844, c2z: 0},
+		{x: 7.68696, y: -4.61218, z: 0, c1x: -0.204986, c1y: 1.69844, c1z: 0, c2x: 0.64424, c2y: -0.702808, c2z: 0},
+		{x: 1.83023, y: -5.05143, z: 0, c1x: -0.64424, c1y: 0.702808, c1z: 0, c2x: 0.981002, c2y: -1.03957, c2z: 0},
+		{x: 2.78195, y: 0.585673, z: 0, c1x: -0.981002, c1y: 1.03957, c1z: 0, c2x: 0.366046, c2y: -1.01029, c2z: 0},
+		{x: 0, y: 0, z: 0, c1x: -0.366046, c1y: 1.01029, c1z: 0, c2x: 1.80095, c2y: 0.805301, c2z: 0},
+	];
+	for(var i = 0 ; i < points75.length ; i++)
+		run("setpointat current " + i + " " + points75[i].x + " " + points75[i].y + " " + points75[i].z + " " + points75[i].c1x + " " + points75[i].c1y + " " + points75[i].c1z + " " + points75[i].c2x + " " + points75[i].c2y + " " + points75[i].c2z);
+	run("setgroup current foretA");
+	run("setcoloractive current 255 0 0 255");
+	run("setposz current 2");
+	run("add cursor 76");
+	run("setcurve current lastCurve");
+	run("setpos current 19.2734 3.7768 2");
+	run("setpattern current 0 0 1");
+	run("setgroup current foretB");
+	run("setspeedf current -6");
+	run("setmessage current 20, osc://ip_out:port_out/cursor cursor_group_id cursor_label cursor_value_x cursor_value_y , tcp:// cursor cursor_id cursor_group_id cursor_value_x cursor_value_y cursor_value_z cursor_xPos cursor_yPos cursor_zPos ,");
+	run("setlabel current source3");
+	run("setboundssourcemode current 3");
+	run("setboundssource current 22.000 6.000 -9.000 10.000 1.051 1.051");
+	run("setboundstarget current -5.000 5.000 -6.000 6.000 0.000 0.000");
+	run("settime current -11551.7216820717");
+
+	run("add cursor 77");
+	run("setcurve current lastCurve");
+	run("setpos current 15.0349 4.92021 2");
+	run("setoffset current 0.5 0 end");
+	run("setgroup current foretB");
+	run("setlabel current source2");
+	run("setspeedf current 5");
+	run("setboundssourcemode current 3");
+	run("setboundssource current 22.000 5.000 -9.000 10.000 2.251 2.251");
+	run("setboundstarget current -5.000 5.000 -6.000 6.000 0.000 0.000");
+	run("setmessage current 20, osc://ip_out:port_out/cursor cursor_group_id cursor_label cursor_value_x cursor_value_y , tcp:// cursor cursor_id cursor_group_id cursor_value_x cursor_value_y cursor_value_z cursor_xPos cursor_yPos cursor_zPos ,");
+	run("setpattern current 0 0 1");
+	run("settime current 9350.35073065758");
+
+	run("add cursor 78");
+	run("setcurve current lastCurve");
+	run("setpos current 9.87475 7.56801 2");
+	run("setoffset current 1 0 end");
+	run("setboundssourcemode current 3");
+	run("setboundstarget current -5.000 5.000 -6.000 6.000 0.000 0.000");
+	run("setspeedf current 4");
+	run("setpattern current 0 0 1");
+	run("setgroup current foretB");
+	run("setlabel current source1");
+	run("setmessage current 20, osc://ip_out:port_out/cursor cursor_group_id cursor_label cursor_value_x cursor_value_y , tcp:// cursor cursor_id cursor_group_id cursor_value_x cursor_value_y cursor_value_z cursor_xPos cursor_yPos cursor_zPos ,");
+	run("settime current 7287.02178144455");
+	run("setboundssource current 22.000 6.000 -9.347 9.774 2.251 2.251");
+
+
+
+	run("add curve 1");
+	run("setpos current -5.97483 10.0067 0");
+	var points1 = [
+		{x: 0, y: 0, z: 0, c1x: 0, c1y: 0, c1z: 0, c2x: 0, c2y: 0, c2z: 0},
+		{x: 0, y: -19.1914, z: 0, c1x: 0, c1y: 0, c1z: 0, c2x: 0, c2y: 0, c2z: 0},
+		{x: -15.0217, y: -19.0845, z: 0, c1x: 0, c1y: 0, c1z: 0, c2x: 0, c2y: 0, c2z: 0},
+		{x: -15.1286, y: 0.0534582, z: 0, c1x: 0, c1y: 0, c1z: 0, c2x: 0, c2y: 0, c2z: 0},
+		{x: 0, y: 0, z: 0, c1x: 0, c1y: 0, c1z: 0, c2x: 0, c2y: 0, c2z: 0},
+	];
+	for(var i = 0 ; i < points1.length ; i++)
+		run("setpointat current " + i + " " + points1[i].x + " " + points1[i].y + " " + points1[i].z + " " + points1[i].c1x + " " + points1[i].c1y + " " + points1[i].c1z + " " + points1[i].c2x + " " + points1[i].c2y + " " + points1[i].c2z);
+	run("setgroup current plan");
+	run("setcoloractive current 0 0 0 255");
+	run("setcolorinactive current 0 0 0 255");
+	run("setactive current 0");
+	run("setsize current 4");
+
+	run("add curve 2");
+	run("setpos current 22.2134 9.93881 0");
+	var points2 = [
+		{x: 0, y: 0, z: 0, c1x: 0, c1y: 0, c1z: 0, c2x: 0, c2y: 0, c2z: 0},
+		{x: 0, y: -19.1914, z: 0, c1x: 0, c1y: 0, c1z: 0, c2x: 0, c2y: 0, c2z: 0},
+		{x: -15.0217, y: -19.0845, z: 0, c1x: 0, c1y: 0, c1z: 0, c2x: 0, c2y: 0, c2z: 0},
+		{x: -15.1286, y: 0.0534582, z: 0, c1x: 0, c1y: 0, c1z: 0, c2x: 0, c2y: 0, c2z: 0},
+		{x: 0, y: 0, z: 0, c1x: 0, c1y: 0, c1z: 0, c2x: 0, c2y: 0, c2z: 0},
+	];
+	for(var i = 0 ; i < points2.length ; i++)
+		run("setpointat current " + i + " " + points2[i].x + " " + points2[i].y + " " + points2[i].z + " " + points2[i].c1x + " " + points2[i].c1y + " " + points2[i].c1z + " " + points2[i].c2x + " " + points2[i].c2y + " " + points2[i].c2z);
+	run("setgroup current plan");
+	run("setcoloractive current 0 0 0 255");
+	run("setcolorinactive current 0 0 0 255");
+	run("setactive current 0");
+	run("setsize current 4");
+	run("setspeedf current 6");
+
+	run("add trigger 3");
+	run("setpos current -9.44206 -6.55965 0");
+	run("setsize current 4");
+	run("setcolorinactive current _simple_curve_inactive");
+	run("setactive current 0");
+	run("setgroup current plan");
+	run("setlabel current EA1");
+
+	run("add trigger 4");
+	run("setpos current -11.0752 -0.578304 0");
+	run("setsize current 4");
+	run("setcolorinactive current _simple_curve_inactive");
+	run("setactive current 0");
+	run("setgroup current plan");
+	run("setlabel current SA");
+	run("setspeedf current 0.45");
+
+	run("add trigger 5");
+	run("setpos current -9.59065 6.63367 0");
+	run("setsize current 4");
+	run("setcolorinactive current _simple_curve_inactive");
+	run("setactive current 0");
+	run("setgroup current plan");
+	run("setlabel current EA4");
+
+	run("add trigger 6");
+	run("setpos current -17.9512 7.11818 0");
+	run("setsize current 4");
+	run("setcolorinactive current _simple_curve_inactive");
+	run("setactive current 0");
+	run("setgroup current plan");
+	run("setlabel current EA3");
+	run("setspeedf current 6");
+
+	run("add trigger 7");
+	run("setpos current -17.2871 -0.847669 0");
+	run("setsize current 4");
+	run("setcolorinactive current _simple_curve_inactive");
+	run("setactive current 0");
+	run("setgroup current plan");
+	run("setlabel current EA2");
+
+	run("add trigger 8");
+	run("setpos current 10.1129 -6.75173 0");
+	run("setsize current 4");
+	run("setcolorinactive current _simple_curve_inactive");
+	run("setactive current 0");
+	run("setgroup current plan");
+	run("setlabel current EB1");
+
+	run("add trigger 9");
+	run("setpos current 10.4488 0.296167 0");
+	run("setsize current 4");
+	run("setcolorinactive current _simple_curve_inactive");
+	run("setactive current 0");
+	run("setgroup current plan");
+	run("setlabel current SB");
+
+	run("add trigger 10");
+	run("setpos current 10.9411 7.26976 0");
+	run("setsize current 4");
+	run("setcolorinactive current _simple_curve_inactive");
+	run("setactive current 0");
+	run("setgroup current plan");
+	run("setlabel current EB4");
+
+	run("add trigger 11");
+	run("setpos current 19.4812 7.01589 0");
+	run("setsize current 4");
+	run("setcolorinactive current _simple_curve_inactive");
+	run("setactive current 0");
+	run("setgroup current plan");
+	run("setlabel current EB3");
+
+	run("add trigger 12");
+	run("setpos current 18.1763 0.526805 0");
+	run("setsize current 4");
+	run("setcolorinactive current _simple_curve_inactive");
+	run("setactive current 0");
+	run("setgroup current plan");
+	run("setlabel current EB3");
+
+
+
+//GUI: NEVER EVER REMOVE THIS LINE
+}
+
+
+/*
+ *	This method stores all the operations made by other softwares through one of the IanniX interfaces.
+ *	You are not supposed to modify this section, but it can be useful to remove some stuff that you or a third party software added accidentaly.
+ *	
+ * 	Be very careful! This section is automaticaly overwritten when saving a score.
+ */
+function madeThroughInterfaces() {
+//INTERFACES: NEVER EVER REMOVE THIS LINE
+
+//INTERFACES: NEVER EVER REMOVE THIS LINE
+}
+
+
+/*
+ *	This method is called last.
+ *	It allows you to modify your hand-drawn score (made through graphical user interface).
+ *	
+ * 	This section is never overwritten by IanniX when saving.
+ */
+function alterateWithScript() {
+	
+}
+
+
+/*
+ *	//APP VERSION: NEVER EVER REMOVE THIS LINE
+ *	Made with IanniX 0.9.16
+ *	//APP VERSION: NEVER EVER REMOVE THIS LINE
+ */
+
