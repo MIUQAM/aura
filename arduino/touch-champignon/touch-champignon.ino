@@ -8,18 +8,18 @@
 
 // Enter a MAC address and IP address for your controller below.
 // The IP address will be dependent on your local network:
-byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0x01 };
-IPAddress ip(10, 0, 1, 101);
+byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0x01, 0x40 };
+IPAddress ip(10, 0, 1, 140);
 IPAddress destinationIP(10, 0, 1, 255);
-unsigned int destinationPort = 9101;
+unsigned int destinationPort = 9140;
 
 unsigned int localPort = 8888;      // local port to listen on
 
 // An EthernetUDP instance to let us send and receive packets over UDP
 EthernetUDP Udp;
 
-boolean verbose = true;
-int numberOfTouch = 4;
+boolean verbose = false;
+int numberOfTouch = 2;
 byte sensitivity = 18;
 uint16_t tresh1;
 uint16_t tresh2;
