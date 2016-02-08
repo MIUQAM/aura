@@ -1,8 +1,8 @@
 {
 	"name" : "AURA_MAX_Projet",
 	"version" : 1,
-	"creationdate" : -759500702,
-	"modificationdate" : 3537728897,
+	"creationdate" : -759500823,
+	"modificationdate" : 3537796665,
 	"viewrect" : [ 10.0, 72.0, 228.0, 559.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
@@ -14,21 +14,6 @@
 				"kind" : "patcher",
 				"local" : 1,
 				"toplevel" : 1
-			}
-,
-			"p_EB4_Storm.maxpat" : 			{
-				"kind" : "patcher",
-				"local" : 1
-			}
-,
-			"p_EB4_Nordic.maxpat" : 			{
-				"kind" : "patcher",
-				"local" : 1
-			}
-,
-			"p_EB4_Fireflies.maxpat" : 			{
-				"kind" : "patcher",
-				"local" : 1
 			}
 ,
 			"p_dreamy_crotale.maxpat" : 			{
@@ -101,21 +86,6 @@
 			}
 ,
 			"p_EA1_Nordic.maxpat" : 			{
-				"kind" : "patcher",
-				"local" : 1
-			}
-,
-			"p_EB2_Storm.maxpat" : 			{
-				"kind" : "patcher",
-				"local" : 1
-			}
-,
-			"p_EB2_Nordic.maxpat" : 			{
-				"kind" : "patcher",
-				"local" : 1
-			}
-,
-			"p_EB2_Fireflies.maxpat" : 			{
 				"kind" : "patcher",
 				"local" : 1
 			}
@@ -209,6 +179,36 @@
 				"local" : 1
 			}
 ,
+			"p_EB2_Nordic.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
+			}
+,
+			"p_EB2_Storm.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
+			}
+,
+			"p_EB2_Fireflies.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
+			}
+,
+			"p_EB4_Nordic.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
+			}
+,
+			"p_EB4_Storm.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
+			}
+,
+			"p_EB4_Fireflies.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
+			}
+,
 			"spat.dsp.status.maxpat" : 			{
 				"kind" : "patcher"
 			}
@@ -217,6 +217,381 @@
 ,
 		"media" : 		{
 			"Bass_Breath_G.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"rise_climax.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"Kick.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"HiHat.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB4_Storm_G.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB4_Storm_G#.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB4_Storm_F.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB4_Storm_F#.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB4_Storm_E.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB4_Storm_D.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB4_Storm_D#.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB4_Storm_C.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB4_Storm_C#.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB4_Storm_B.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB4_Storm_A.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB4_Storm_A#.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB4_Nordic_G.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB4_Nordic_G#.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB4_Nordic_F.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB4_Nordic_F#.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB4_Nordic_E.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB4_Nordic_D.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB4_Nordic_D#.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB4_Nordic_C.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB4_Nordic_C#.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB4_Nordic_B.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB4_Nordic_A.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB4_Nordic_A#.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB4_Fireflies_G.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB4_Fireflies_G#.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB4_Fireflies_F.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB4_Fireflies_F#.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB4_Fireflies_E.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB4_Fireflies_D.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB4_Fireflies_D#.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB4_Fireflies_C.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB4_Fireflies_C#.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB4_Fireflies_B.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB4_Fireflies_A.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB4_Fireflies_A#.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB2_Storm_G.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB2_Storm_G#.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB2_Storm_F.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB2_Storm_F#.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB2_Storm_E.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB2_Storm_D.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB2_Storm_D#.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB2_Storm_C.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB2_Storm_C#.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB2_Storm_B.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB2_Storm_A.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB2_Storm_A#.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB2_Nordic_G.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB2_Nordic_G#.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB2_Nordic_F.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB2_Nordic_F#.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB2_Nordic_E.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB2_Nordic_D.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB2_Nordic_D#.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB2_Nordic_C.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB2_Nordic_C#.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB2_Nordic_B.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB2_Nordic_A.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB2_Nordic_A#.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB2_Fireflies_G.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB2_Fireflies_G#.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB2_Fireflies_F.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB2_Fireflies_F#.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB2_Fireflies_E.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB2_Fireflies_D.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB2_Fireflies_D#.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB2_Fireflies_C.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB2_Fireflies_C#.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB2_Fireflies_B.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB2_Fireflies_A.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1
+			}
+,
+			"EB2_Fireflies_A#.wav" : 			{
 				"kind" : "audiofile",
 				"local" : 1
 			}
