@@ -1,9 +1,9 @@
 {
 	"name" : "AURA_MAX_Projet",
 	"version" : 1,
-	"creationdate" : -759500581,
-	"modificationdate" : -758305828,
-	"viewrect" : [ 8.0, 48.0, 1050.0, 853.0 ],
+	"creationdate" : -759500702,
+	"modificationdate" : 3537728897,
+	"viewrect" : [ 10.0, 72.0, 228.0, 559.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
 	"showdependencies" : 1,
@@ -14,6 +14,21 @@
 				"kind" : "patcher",
 				"local" : 1,
 				"toplevel" : 1
+			}
+,
+			"p_EB4_Storm.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
+			}
+,
+			"p_EB4_Nordic.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
+			}
+,
+			"p_EB4_Fireflies.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
 			}
 ,
 			"p_dreamy_crotale.maxpat" : 			{
@@ -37,6 +52,11 @@
 			}
 ,
 			"tree-notes.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
+			}
+,
+			"p_EA2_Nordic.maxpat" : 			{
 				"kind" : "patcher",
 				"local" : 1
 			}
@@ -81,6 +101,21 @@
 			}
 ,
 			"p_EA1_Nordic.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
+			}
+,
+			"p_EB2_Storm.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
+			}
+,
+			"p_EB2_Nordic.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
+			}
+,
+			"p_EB2_Fireflies.maxpat" : 			{
 				"kind" : "patcher",
 				"local" : 1
 			}
@@ -140,17 +175,8 @@
 				"local" : 1
 			}
 ,
-			"spat.dsp.status.maxpat" : 			{
-				"kind" : "patcher"
-			}
-,
 			"spat.cpumonitor.maxpat" : 			{
 				"kind" : "patcher"
-			}
-,
-			"p_EA2_Nordic.maxpat" : 			{
-				"kind" : "patcher",
-				"local" : 1
 			}
 ,
 			"p_EA4_Nordic.maxpat" : 			{
@@ -176,6 +202,15 @@
 			"p_EA4_Fireflies.maxpat" : 			{
 				"kind" : "patcher",
 				"local" : 1
+			}
+,
+			"p_climax.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
+			}
+,
+			"spat.dsp.status.maxpat" : 			{
+				"kind" : "patcher"
 			}
 
 		}
@@ -1788,5 +1823,7 @@
 ,
 	"detailsvisible" : 0,
 	"amxdtype" : 1633771873,
-	"readonly" : 0
+	"readonly" : 0,
+	"devpathtype" : 0,
+	"devpath" : "."
 }
