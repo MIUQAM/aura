@@ -10,6 +10,6 @@ start arbres_B/arbres_B.toe
 timeout 1
 start lanternes/lanternes.toe
 timeout 1
-start riviere/riviere.toe
+start etang/etang.toe
 timeout 1
 start saules/saules.toe
