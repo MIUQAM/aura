@@ -10,16 +10,18 @@
 #define PIN 0
 #define PIN2 1
 #define PIN3 2
-#define LED_COUNT 350
+#define LED_COUNT1 144
+#define LED_COUNT2 114
+#define LED_COUNT3 700
 #define UDP_TX_PACKET_MAX_SIZE 1522
 
 byte mac[] = {  
-  0xDE, 0xAD, 0xBE, 0xEF, 0x02, 0x41 };
-IPAddress ip(10, 0, 1, 241);
+  0xDE, 0xAD, 0xBE, 0xEF, 0x02, 0x21 };
+IPAddress ip(10, 0, 1, 221);
 
-unsigned int localPort = 9241;      // local port to listen on
-unsigned int localPort2 = 9242;      // local port to listen on
-unsigned int localPort3 = 9254;      // local port to listen on
+unsigned int localPort = 9221;      // local port to listen on
+unsigned int localPort2 = 9222;      // local port to listen on
+unsigned int localPort3 = 9252;      // local port to listen on
 char packetBuffer[UDP_TX_PACKET_MAX_SIZE]; //buffer to hold incoming packet,
 char packetBuffer2[UDP_TX_PACKET_MAX_SIZE]; //buffer to hold incoming packet,
 char packetBuffer3[UDP_TX_PACKET_MAX_SIZE]; //buffer to hold incoming packet,
@@ -29,9 +31,9 @@ EthernetUDP Udp;
 EthernetUDP Udp2;
 EthernetUDP Udp3;
 
-Adafruit_NeoPixel strip = Adafruit_NeoPixel(LED_COUNT, PIN, NEO_GRB + NEO_KHZ800);
-Adafruit_NeoPixel strip2 = Adafruit_NeoPixel(LED_COUNT, PIN2, NEO_GRB + NEO_KHZ800);
-Adafruit_NeoPixel strip3 = Adafruit_NeoPixel(LED_COUNT, PIN3, NEO_GRB + NEO_KHZ800);
+Adafruit_NeoPixel strip = Adafruit_NeoPixel(LED_COUNT1, PIN, NEO_GRB + NEO_KHZ800);
+Adafruit_NeoPixel strip2 = Adafruit_NeoPixel(LED_COUNT2, PIN2, NEO_GRB + NEO_KHZ800);
+Adafruit_NeoPixel strip3 = Adafruit_NeoPixel(LED_COUNT3, PIN3, NEO_GRB + NEO_KHZ800);
 
 void setup() {
   // This is for Trinket 5V 16MHz, you can remove these three lines if you are not using a Trinket
@@ -115,7 +117,7 @@ void loop() {
   }
 //  Serial.println("OK");
 //  Serial.println(packetBuffer);
-  for(uint16_t j = 0; j < LED_COUNT; j++) {
+  for(uint16_t j = 0; j < LED_COUNT3; j++) {
 //    if(j > 200)
 //      Serial.println(j);
     //leds[(i*NUM_LEDS_PER_STRIP) + j] = CRGB(packetBuffer[(j*3)],packetBuffer[(j*3)+1],packetBuffer[(j*3)+2]);
@@ -123,7 +125,7 @@ void loop() {
 //    uint32_t color = packetBuffer[(j*3)] + (packetBuffer[(j*3)+1] << 8) + (packetBuffer[(j*3)+2] << 16);
     strip.setPixelColor(j, strip.Color(packetBuffer[(j*3)], packetBuffer[(j*3)+1], packetBuffer[(j*3)+2]));
     strip2.setPixelColor(j, strip2.Color(packetBuffer2[(j*3)], packetBuffer2[(j*3)+1], packetBuffer2[(j*3)+2]));
-    strip3.setPixelColor(j, strip3.Color(packetBuffer3[(j*3)], packetBuffer3[(j*3)+1], packetBuffer3[(j*3)+2]));
+    strip3.setPixelColor(j*2, strip3.Color(packetBuffer3[(j*3)], packetBuffer3[(j*3)+1], packetBuffer3[(j*3)+2]));
   }
   strip.show();
   strip2.show();
@@ -135,7 +137,7 @@ void loop() {
 void ledBinary(char str[]) {
   char sup[9];
 //  Serial.println(sizeof(packetBuffer));
-  for(uint16_t i = 0; i < LED_COUNT; i++) {
+  for(uint16_t i = 0; i < LED_COUNT3; i++) {
     for(byte j = 0; j < 8; j++) {
       sup[j] = packetBuffer[j + (i * 8)];
       //packetBuffer[j] = packetBuffer[i * 8];
