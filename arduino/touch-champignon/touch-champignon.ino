@@ -8,19 +8,19 @@
 
 // Enter a MAC address and IP address for your controller below.
 // The IP address will be dependent on your local network:
-byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0x01, 0x40 };
-IPAddress ip(10, 0, 1, 140);
+byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0x02, 0x40 };
+IPAddress ip(10, 0, 1, 240);
 IPAddress destinationIP(10, 0, 1, 255);
-unsigned int destinationPort = 9140;
+unsigned int destinationPort = 9240;
 
 unsigned int localPort = 8888;      // local port to listen on
 
 // An EthernetUDP instance to let us send and receive packets over UDP
 EthernetUDP Udp;
 
-boolean verbose = false;
+boolean verbose = true;
 int numberOfTouch = 2;
-byte sensitivity = 18;
+byte sensitivity = 20;
 uint16_t tresh1;
 uint16_t tresh2;
 uint16_t tresh3;
@@ -41,11 +41,11 @@ void setup()
   Ethernet.begin(mac,ip);
   Udp.begin(localPort);
   tresh1 = getSensorMeasurement(0) - sensitivity; //Fake sensor, the first one never works
-  tresh1 = getSensorMeasurement(0) - 11;
+  tresh1 = getSensorMeasurement(0) - sensitivity;
   Serial.print("t1: ");
   Serial.print(tresh1);
   delay(500);
-  tresh2 = getSensorMeasurement(1) - 11;
+  tresh2 = getSensorMeasurement(1) - sensitivity;
   Serial.print(" t2: ");
   Serial.print(tresh2);
   delay(500);
