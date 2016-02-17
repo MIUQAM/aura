@@ -7,3 +7,5 @@ timeout 1
 start clocher/master_clocher.toe
 timeout 1
 start Rectorat/rectorat.toe
+timeout 1
+start rectorat_out/rectorat_out.toe
