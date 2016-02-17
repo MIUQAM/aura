@@ -1,8 +1,12 @@
 start master/master.toe
 timeout 2
-start master/masterLedsOut.toe
+start master/masterLedsOutVeines.toe
 timeout 2
-start master_in/master_in.toe
+start master/masterLedsOut_Plafond.toe
+timeout 2
+start master_in/master_inA.toe
+timeout 2
+start master_in/master_inB.toe
 timeout 2
 start master_dmx/master_dmx_foret.toe
 timeout 2
