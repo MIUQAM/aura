@@ -1,4 +1,3 @@
-
 #include "mpr121.h"
 #include "i2c.h"
 
@@ -12,18 +11,22 @@ byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0x01, 0x40 };
 IPAddress ip(10, 0, 1, 140);
 IPAddress destinationIP(10, 0, 1, 255);
 unsigned int destinationPort = 9140;
+char packetBuffer[UDP_TX_PACKET_MAX_SIZE]; //buffer to hold incoming packet,
 
-unsigned int localPort = 8888;      // local port to listen on
+unsigned int listeningPort = 8514;      // local port to listen on
+unsigned int sendValPort = 8614;      // local port to listen on
 
 // An EthernetUDP instance to let us send and receive packets over UDP
 EthernetUDP Udp;
 
 boolean verbose = false;
 int numberOfTouch = 2;
-byte sensitivity = 18;
+byte sensitivity = 20;
 uint16_t tresh1;
 uint16_t tresh2;
 uint16_t tresh3;
+unsigned long lastExecution;
+int timeBetweenExecutions = 1000;
 
 void setup()
 {
@@ -39,24 +42,49 @@ void setup()
   delay(500);
   Serial.println("DONE!");
   Ethernet.begin(mac,ip);
-  Udp.begin(localPort);
+  Udp.begin(listeningPort);
   tresh1 = getSensorMeasurement(0) - sensitivity; //Fake sensor, the first one never works
-  tresh1 = getSensorMeasurement(0) - 11;
+  tresh1 = getSensorMeasurement(0) - sensitivity;
   Serial.print("t1: ");
   Serial.print(tresh1);
   delay(500);
-  tresh2 = getSensorMeasurement(1) - 11;
+  tresh2 = getSensorMeasurement(1) - sensitivity;
   Serial.print(" t2: ");
   Serial.print(tresh2);
   delay(500);
   tresh3 = getSensorMeasurement(2) - sensitivity;
   Serial.print(" t3: ");
   Serial.print(tresh3);
+  
+//  t.every(5000, sendReading); //Function to send and saveState
+  lastExecution = millis();
+  Serial.println("");
   delay(2000);
 }
 
 void loop()
 {
+  int packetSize = Udp.parsePacket();
+  if(packetSize)
+  {
+    Udp.read(packetBuffer,UDP_TX_PACKET_MAX_SIZE);
+    // Read each command pair 
+    char* currentSens = strtok(packetBuffer, " ");
+    byte currentVar = 0;
+    while (currentSens != 0)
+    {
+      if(currentVar == 0)
+        tresh1 = atoi(currentSens);
+      if(currentVar == 1)
+        tresh2 = atoi(currentSens);
+//    Serial.println(currentSens);
+
+    // Find the next command in input string
+    currentVar++;
+    currentSens = strtok(0, " ");
+    }
+  }
+  
   uint16_t value1 = getSensorMeasurement(0);
   uint16_t value2 = getSensorMeasurement(1);
   uint16_t value3 = getSensorMeasurement(2);
@@ -105,6 +133,24 @@ void loop()
   Udp.print(touchData);
   Udp.endPacket();
 //  delay(100);
+//  Serial.println("tabarnac");
+  if(millis() > timeBetweenExecutions + lastExecution)
+    sendReading();
+}
+
+void sendReading() {
+  lastExecution = millis();
+  uint16_t value1 = getSensorMeasurement(0);
+  uint16_t value2 = getSensorMeasurement(1);
+  Udp.beginPacket(destinationIP, sendValPort);
+  Udp.print(value1);
+  Udp.print(" ");
+  Udp.print(tresh1);
+  Udp.print(" ");
+  Udp.print(value2);
+  Udp.print(" ");
+  Udp.print(tresh2);
+  Udp.endPacket();
 }
 
 int getSensorMeasurement(byte sensorNumber)
