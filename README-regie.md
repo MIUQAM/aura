@@ -1,6 +1,19 @@
+# Aura
 ## Procédure Aura régie
 
 n.b.: les noms des différents ordinateurs ne reflètent pas de leur utilisation réelle.
+
+### Lancement de chaque partie
+- Ordinateur _PHOTON_ (**JAUNE**) : 
+	- Lancer le fichier ```touchdesigner/start_regie.bat```
+- Ordinateur _VISUEL_ (**VERT**) : 
+	- Lancer le fichier ```touchdesigner/start_projection.bat``` 
+- Ordinateur _REALMOTION_ (**NOIR**) : 
+	- Lancer _Watchout Display_. Noter l'IP.
+- Ordinateur _AUDIO_ (**ROUGE**) : 
+	- Ouvrir le logiciel _Iannix_. Aller dans _Fichier_ > _Ouvrir_ et ouvrir le fichier ```max/other/Mouvement AURA to scale.iannix```. Cliquer sur _Play_
+	- Ouvrir le fichier ```max/AURA_MAX_Projet.maxproj``` dans _Max MSP_
+
 
 ### Overview ordinateurs
 - Ordinateur _PHOTON_ (**JAUNE**) : gère les communications entre les différentes parties
@@ -31,14 +44,3 @@ n.b.: les noms des différents ordinateurs ne reflètent pas de leur utilisation
 	- 1 sortie vidéo écran
 	- 1 MOTU USB branchée dans
 		- 2 snakes
-
-### Lancement de chaque partie
-- Ordinateur _PHOTON_ (**JAUNE**) : 
-	- Lancer le fichier ```touchdesigner/start_regie.bat```
-- Ordinateur _VISUEL_ (**VERT**) : 
-	- Lancer le fichier ```touchdesigner/start_projection.bat``` 
-- Ordinateur _REALMOTION_ (**NOIR**) : 
-	- Lancer _Watchout Display_. Noter l'IP.
-- Ordinateur _AUDIO_ (**ROUGE**) : 
-	- Ouvrir le logiciel _Iannix_. Aller dans _Fichier_ > _Ouvrir_ et ouvrir le fichier ```max/other/Mouvement AURA to scale.iannix```. Cliquer sur _Play_
-	- Ouvrir le fichier ```max/AURA_MAX_Projet.maxproj``` dans _Max MSP_
