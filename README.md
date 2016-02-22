@@ -29,5 +29,5 @@ git lfs pull
 ![Schéma de communication visuel](doc/schema_visuel.png)
 
 ### Schéma de connexions
-![Schéma de connexions](doc/schema_connexions.png)
-(cliquer pour élargir)
+[![Schéma de connexions](doc/schema_connexions.png)](doc/schema_connexions.pdf)
+(cliquer pour version PDF)
