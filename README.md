@@ -1,5 +1,7 @@
 # ![Aura - Traversée immersive](doc/logo.png)
 
+### **>>> [INSTRUCTIONS POUR LANCER LE PROJET DANS LA RÉGIE](README-regie.md) <<<**
+
 ### Méthodologie
 - La branche `master` contient une version stable du projet
 - La branche `develop` contient la version de développement du projet.
