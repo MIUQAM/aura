@@ -3,7 +3,7 @@
 ### **>>> [INSTRUCTIONS POUR LANCER LE PROJET DANS LA RÉGIE](README-regie.md) <<<**
 
 ### Méthodologie
-- La version de _TouchDesigner_ utilisée pour ce projet est la [58910](http://www.derivative.ca/Builds/TouchDesigner088.58910.64-Bit.exe)
+- La version de _TouchDesigner_ utilisée pour ce projet est la [version 58910.](http://www.derivative.ca/Builds/TouchDesigner088.58910.64-Bit.exe)
 - La branche `master` contient une version stable du projet
 - La branche `develop` contient la version de développement du projet.
 Lors de votre travail, utilisez la branche `develop`.  
