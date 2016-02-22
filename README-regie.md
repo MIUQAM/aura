@@ -23,6 +23,7 @@ n.b.: les noms des différents ordinateurs ne reflètent pas de leur utilisation
 
 
 ### Branchements ordinateurs
+n.b.: Se référer au [schéma de connexions](README.md#schema-de-connexions) pour plus de détails
 - Ordinateur _PHOTON_ (**JAUNE**) : 
 	- 1 ethernet
 	- 1 sortie vidéo écran
