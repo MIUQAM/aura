@@ -1,5 +1,7 @@
 # ![Aura - Traversée immersive](doc/logo.png)
 
+### **>>> [INSTRUCTIONS POUR LANCER LE PROJET DANS LA RÉGIE](README-regie.md) <<<**
+
 ### Méthodologie
 - La branche `master` contient une version stable du projet
 - La branche `develop` contient la version de développement du projet.
@@ -23,9 +25,10 @@ Une fois Git LFS installé, exécuter la commande suivante :
 git lfs pull
 ```
 
-### Schéma de communication visuel
-![Schéma de communication visuel](doc/schema_visuel.png)
+### Schema de communication visuel
+[![Schéma de communication visuel](doc/schema_visuel.png)](https://www.lucidchart.com/documents/view/46d38f88-bbe4-4ac7-bbc7-b418d1179246)
+(cliquer pour viewer Lucidchart)
 
-### Schéma de connexions
-![Schéma de connexions](doc/schema_connexions.png)
-(cliquer pour élargir)
+### Schema de connexions
+[![Schéma de connexions](doc/schema_connexions.png)](https://www.lucidchart.com/documents/view/9890331f-64d0-4a9a-a718-01d56c739518)
+(cliquer pour viewer Lucidchart)
