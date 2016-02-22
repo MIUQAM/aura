@@ -25,9 +25,9 @@ Une fois Git LFS installé, exécuter la commande suivante :
 git lfs pull
 ```
 
-### Schéma de communication visuel
+### Schema de communication visuel
 ![Schéma de communication visuel](doc/schema_visuel.png)
 
-### Schéma de connexions
+### Schema de connexions
 [![Schéma de connexions](doc/schema_connexions.png)](https://www.lucidchart.com/documents/view/9890331f-64d0-4a9a-a718-01d56c739518)
 (cliquer pour un viewer Lucidchart)
