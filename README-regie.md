@@ -15,7 +15,7 @@ n.b.: les noms des différents ordinateurs ne reflètent pas de leur utilisation
 	- Ouvrir le fichier ```max/AURA_MAX_Projet.maxproj``` dans _Max MSP_.
 	- Baisser le son master (tout en bas à droite de la fenêtre de _Max MSP_) au plus bas, puis allumer le moteur audio.
 - Ordinateur _ALIENWARE_ :
-	- Ouvrir le fichier ```watchout/clocher.watch``` dans _WATCHOUT Production_
+	- Ouvrir le fichier ```watchout/aura_clocher_rectorat.watch``` dans _WATCHOUT Production_
 	- Aller dans _Media_ > _Live_
 
 
