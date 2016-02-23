@@ -12,7 +12,8 @@ n.b.: les noms des différents ordinateurs ne reflètent pas de leur utilisation
 	- Lancer _Watchout Display_. Noter l'IP.
 - Ordinateur _AUDIO_ (**ROUGE**) : 
 	- Ouvrir le logiciel _Iannix_. Aller dans _Fichier_ > _Ouvrir_ et ouvrir le fichier ```max/other/Mouvement AURA to scale.iannix```. Cliquer sur _Play_
-	- Ouvrir le fichier ```max/AURA_MAX_Projet.maxproj``` dans _Max MSP_
+	- Ouvrir le fichier ```max/AURA_MAX_Projet.maxproj``` dans _Max MSP_.
+	- Baisser le son master (tout en bas à droite de la fenêtre de _Max MSP_) au plus bas, puis allumer le moteur audio.
 
 
 ### Overview ordinateurs
@@ -23,6 +24,7 @@ n.b.: les noms des différents ordinateurs ne reflètent pas de leur utilisation
 
 
 ### Branchements ordinateurs
+n.b.: Se référer au [schéma de connexions](README.md#schema-de-connexions) pour plus de détails
 - Ordinateur _PHOTON_ (**JAUNE**) : 
 	- 1 ethernet
 	- 1 sortie vidéo écran
