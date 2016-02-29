@@ -1,2 +1,6 @@
 .DS_Store
-
+Thumbs.db
+*.wav
+*.avi
+*.mp4
+*.mov
