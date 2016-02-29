@@ -13,15 +13,14 @@ cd aura
 git checkout develop
 ```
 
-### Télécharger les ressources audio 
-Les ressources audio sont stockées séparément de ce repository.  
-Il vous faut installer [Git LFS](https://git-lfs.github.com/).  
-Sur Mac : `brew install git-lfs`.  
-Sur Windows : [en bas, Windows AMD64](https://github.com/github/git-lfs/releases/latest).  
-Une fois Git LFS installé, exécuter la commande suivante :
-```
-git lfs pull
-```
+### Télécharger les ressources
+- Visuel :
+  - Télécharger l'archive suivante : http://projetaura.com/media/touchdesigner-media.zip
+  - Extraire le contenu de l'archive dans le dossier `touchdesigner/media/`
+- Audio :
+  - Télécharger l'archive suivante : http://projetaura.com/media/max-media.zip
+  - Extraire le contenu de l'archive dans le dossier `max/media/`
+
 
 ### Schéma de communication visuel
 ![Schéma de communication visuel](doc/schema_visuel.png)
