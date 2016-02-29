@@ -1,11 +1,11 @@
 start clocher_out/clocher_out.toe
 timeout 1
-start clocher/Fond/fond.toe
+start clocher_fond/clocher_fond.toe
 timeout 1
-start clocher/Clocher_transitions.toe
+start clocher_front/clocher_front.toe
 timeout 1
-start clocher/master_clocher.toe
+start clocher_master/clocher_master.toe
 timeout 1
-start Rectorat/rectorat.toe
+start rectorat/rectorat.toe
 timeout 1
 start rectorat_out/rectorat_out.toe
