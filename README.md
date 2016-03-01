@@ -1,5 +1,7 @@
 # ![Aura - Traversée immersive](doc/logo.png)
 
+N.B. : La version de _TouchDesigner_ utilisée pour ce projet est la [version 58910.](http://www.derivative.ca/Builds/TouchDesigner088.58910.64-Bit.exe)
+
 ### Cloner le projet
 ```
 git clone git@github.com:MIUQAM/aura.git
