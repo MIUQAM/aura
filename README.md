@@ -1,5 +1,7 @@
 # ![Aura - Traversée immersive](doc/logo.png)
 
+[:fr: Version francophone](README.fr.md)
+
 N.B. : The _TouchDesigner_ version for this project is [version 58910.](http://www.derivative.ca/Builds/TouchDesigner088.58910.64-Bit.exe)
 
 ### Clone this project
