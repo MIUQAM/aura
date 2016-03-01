@@ -17,8 +17,9 @@ git clone git@github.com:MIUQAM/aura.git
 
 
 ### Schéma de communication visuel
-![Schéma de communication visuel](doc/schema_visuel.png)
+[![Schéma de communication visuel](doc/schema_visuel.png)](https://www.lucidchart.com/documents/view/46d38f88-bbe4-4ac7-bbc7-b418d1179246)
+(cliquer pour viewer Lucidchart)
 
-### Schéma de connexions
-![Schéma de connexions](doc/schema_connexions.png)
-(cliquer pour élargir)
+### Schéma des connexions
+[![Schéma de connexions](doc/schema_connexions.png)](https://www.lucidchart.com/documents/view/9890331f-64d0-4a9a-a718-01d56c739518)
+(cliquer pour viewer Lucidchart)
