@@ -11,10 +11,10 @@ git checkout develop
 
 ### Télécharger les ressources
 - Visuel :
-  - Télécharger l'archive suivante : http://projetaura.com/media/touchdesigner-media.zip
+  - Télécharger l'archive suivante : http://projetaura.com/media/touchdesigner-media.zip ([Mirror](https://drive.google.com/open?id=0B3Nb5jB8NyWPSDRBTkM1UXRfczQ))
   - Extraire le contenu de l'archive dans le dossier `touchdesigner/media/`
 - Audio :
-  - Télécharger l'archive suivante : http://projetaura.com/media/max-media.zip
+  - Télécharger l'archive suivante : http://projetaura.com/media/max-media.zip ([Mirror](https://drive.google.com/open?id=0B3Nb5jB8NyWPbDQ3VFQ5RnhhSlk))
   - Extraire le contenu de l'archive dans le dossier `max/media/`
 
 
