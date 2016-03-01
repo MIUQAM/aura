@@ -5,8 +5,6 @@ N.B. : La version de _TouchDesigner_ utilisée pour ce projet est la [version 58
 ### Cloner le projet
 ```
 git clone git@github.com:MIUQAM/aura.git
-cd aura
-git checkout develop
 ```
 
 ### Télécharger les ressources
