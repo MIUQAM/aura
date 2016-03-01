@@ -1,2 +1,12 @@
 .DS_Store
 Thumbs.db
+*.wav
+*.avi
+*.mp4
+*.mov
+
+touchdesigner/media/*
+!touchdesigner/media/.keep
+
+max/media/*
+!max/media/.keep

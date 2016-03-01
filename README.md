@@ -1,35 +1,27 @@
 # ![Aura - Traversée immersive](doc/logo.png)
 
-### **>>> [INSTRUCTIONS POUR LANCER LE PROJET DANS LA RÉGIE](README-regie.md) <<<**
+[:fr: Version francophone](README.fr.md)
 
-### Méthodologie
-- La version de _TouchDesigner_ utilisée pour ce projet est la [version 58910.](http://www.derivative.ca/Builds/TouchDesigner088.58910.64-Bit.exe)
-- La branche `master` contient une version stable du projet
-- La branche `develop` contient la version de développement du projet.
-Lors de votre travail, utilisez la branche `develop`.  
-Pour chaque sprint, un "pull request" sera ouvert, puis mergé à la fin du sprint dans la branche master. Aussi, un tag sera ajouté au commit lors du merge.
+N.B. : The _TouchDesigner_ version for this project is [version 58910.](http://www.derivative.ca/Builds/TouchDesigner088.58910.64-Bit.exe)
 
-### Cloner le projet
+### Clone this project
 ```
 git clone git@github.com:MIUQAM/aura.git
-cd aura
-git checkout develop
 ```
 
-### Télécharger les ressources audio 
-Les ressources audio sont stockées séparément de ce repository.  
-Il vous faut installer [Git LFS](https://git-lfs.github.com/).  
-Sur Mac : `brew install git-lfs`.  
-Sur Windows : [en bas, Windows AMD64](https://github.com/github/git-lfs/releases/latest).  
-Une fois Git LFS installé, exécuter la commande suivante :
-```
-git lfs pull
-```
+### Download external resources
+- Visual :
+  - Download the following archive : http://projetaura.com/media/touchdesigner-media.zip ([Mirror](https://drive.google.com/open?id=0B3Nb5jB8NyWPSDRBTkM1UXRfczQ))
+  - Unzip it's contents in the folder `touchdesigner/media/`
+- Audio :
+  - Download the following archive : http://projetaura.com/media/max-media.zip ([Mirror](https://drive.google.com/open?id=0B3Nb5jB8NyWPbDQ3VFQ5RnhhSlk))
+  - Unzip it's contents in the folder `max/media/`
 
-### Schema de communication visuel
-[![Schéma de communication visuel](doc/schema_visuel.png)](https://www.lucidchart.com/documents/view/46d38f88-bbe4-4ac7-bbc7-b418d1179246)
-(cliquer pour viewer Lucidchart)
 
-### Schema de connexions
-[![Schéma de connexions](doc/schema_connexions.png)](https://www.lucidchart.com/documents/view/9890331f-64d0-4a9a-a718-01d56c739518)
-(cliquer pour viewer Lucidchart)
+### Visual communication scheme
+[![Visual communication scheme](doc/schema_visuel.png)](https://www.lucidchart.com/documents/view/46d38f88-bbe4-4ac7-bbc7-b418d1179246)
+(clic for Lucidchart viewer)
+
+### Connections scheme
+[![Connections scheme](doc/schema_connexions.png)](https://www.lucidchart.com/documents/view/9890331f-64d0-4a9a-a718-01d56c739518)
+(click for Lucidchart viewer)
