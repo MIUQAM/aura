@@ -38,6 +38,8 @@ git clone git@github.com:MIUQAM/aura.git
 - Hugo Daoust ([LinkedIn](https://www.linkedin.com/in/hugo-daoust-4174b610a))
 - Ruby-Maude Rioux ([Github](https://github.com/rubanmauve), [LinkedIn](https://linkedin.com/pub/ruby-maude-rioux/5a/3b9/b5a))
 
+Everyone who worked on this project (outside of programming) is on [our website](http://projetaura.com) !
+
 ### Visual communication scheme
 [![Visual communication scheme](doc/schema_visuel.png)](https://www.lucidchart.com/documents/view/46d38f88-bbe4-4ac7-bbc7-b418d1179246)
 (clic for Lucidchart viewer)
