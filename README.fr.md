@@ -2,7 +2,9 @@
 
 [:us: English version here](README.md)
 
-N.B. : La version de _TouchDesigner_ utilisée pour ce projet est la [version 58910.](http://www.derivative.ca/Builds/TouchDesigner088.58910.64-Bit.exe)
+[![Touchdesigner 088.58910](https://img.shields.io/badge/Touchdesigner-088.58910-2d98ce.svg?style=flat)](http://www.derivative.ca/Builds/TouchDesigner088.58910.64-Bit.exe) 
+[![Max 7.2](https://img.shields.io/badge/Max-7.2-b5b9bf.svg?style=flat)](https://cycling74.com/max7/) 
+[![WATCHOUT 6.0.2](https://img.shields.io/badge/WATCHOUT-6.0.2-a2227b.svg?style=flat)](http://www.dataton.com/watchout) 
 
 ### Cloner le projet
 ```
