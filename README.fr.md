@@ -19,6 +19,14 @@ git clone git@github.com:MIUQAM/aura.git
   - Télécharger l'archive suivante : http://projetaura.com/media/max-media.zip ([Mirror](https://drive.google.com/open?id=0B3Nb5jB8NyWPbDQ3VFQ5RnhhSlk))
   - Extraire le contenu de l'archive dans le dossier `max/media/`
 
+### Schéma de communication visuel
+[![Schéma de communication visuel](doc/schema_visuel.png)](https://www.lucidchart.com/documents/view/46d38f88-bbe4-4ac7-bbc7-b418d1179246)
+(cliquer pour viewer Lucidchart)
+
+### Schéma des connexions
+[![Schéma de connexions](doc/schema_connexions.png)](https://www.lucidchart.com/documents/view/9890331f-64d0-4a9a-a718-01d56c739518)
+(cliquer pour viewer Lucidchart)
+
 ### Équipe de développement 
 #### Audio
 - Joël Côté Bergevin
@@ -40,10 +48,6 @@ git clone git@github.com:MIUQAM/aura.git
 
 Toute l'équipe du projet (n'ayant pas tous participé à la programmation) est sur [notre site web](http://projetaura.com) !
 
-### Schéma de communication visuel
-[![Schéma de communication visuel](doc/schema_visuel.png)](https://www.lucidchart.com/documents/view/46d38f88-bbe4-4ac7-bbc7-b418d1179246)
-(cliquer pour viewer Lucidchart)
-
-### Schéma des connexions
-[![Schéma de connexions](doc/schema_connexions.png)](https://www.lucidchart.com/documents/view/9890331f-64d0-4a9a-a718-01d56c739518)
-(cliquer pour viewer Lucidchart)
+### License
+Copyright 2016  
+Code libéré sous [license MIT](LICENSE): http://opensource.org/licenses/MIT

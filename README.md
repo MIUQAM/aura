@@ -19,6 +19,14 @@ git clone git@github.com:MIUQAM/aura.git
   - Download the following archive : http://projetaura.com/media/max-media.zip ([Mirror](https://drive.google.com/open?id=0B3Nb5jB8NyWPbDQ3VFQ5RnhhSlk))
   - Unzip it's contents in the folder `max/media/`
 
+### Visual communication scheme
+[![Visual communication scheme](doc/schema_visuel.png)](https://www.lucidchart.com/documents/view/46d38f88-bbe4-4ac7-bbc7-b418d1179246)
+(clic for Lucidchart viewer)
+
+### Connections scheme
+[![Connections scheme](doc/schema_connexions.png)](https://www.lucidchart.com/documents/view/9890331f-64d0-4a9a-a718-01d56c739518)
+(click for Lucidchart viewer)
+
 ### Development team 
 #### Audio
 - Joël Côté Bergevin
@@ -38,12 +46,8 @@ git clone git@github.com:MIUQAM/aura.git
 - Hugo Daoust ([LinkedIn](https://www.linkedin.com/in/hugo-daoust-4174b610a))
 - Ruby-Maude Rioux ([Github](https://github.com/rubanmauve), [LinkedIn](https://linkedin.com/pub/ruby-maude-rioux/5a/3b9/b5a))
 
-Everyone who worked on this project (outside of programming) is on [our website](http://projetaura.com) !
+Everyone who worked on this project (outside of programming) is on [our website](http://projetaura.com)!
 
-### Visual communication scheme
-[![Visual communication scheme](doc/schema_visuel.png)](https://www.lucidchart.com/documents/view/46d38f88-bbe4-4ac7-bbc7-b418d1179246)
-(clic for Lucidchart viewer)
-
-### Connections scheme
-[![Connections scheme](doc/schema_connexions.png)](https://www.lucidchart.com/documents/view/9890331f-64d0-4a9a-a718-01d56c739518)
-(click for Lucidchart viewer)
+### License
+Copyright 2016
+Code licensed under the [MIT License](LICENSE): http://opensource.org/licenses/MIT
