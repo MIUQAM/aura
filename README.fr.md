@@ -1,4 +1,6 @@
-# ![Aura - Traversée immersive](doc/logo.png)
+# ![icon](doc/icon.png) Aura - Traversée immersive
+
+[![Click to view the video](doc/video.jpg)](https://www.youtube.com/watch?v=TnMXGh4VQu4)
 
 [:us: English version here](README.md)
 
