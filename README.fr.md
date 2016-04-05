@@ -1,6 +1,6 @@
 # ![icon](doc/icon.png) Aura - Traversée immersive
 
-[![Click to view the video](doc/video.jpg)](https://www.youtube.com/watch?v=TnMXGh4VQu4)
+[![Click to view the video](doc/video.jpg)](https://www.youtube.com/watch?v=CvLYBNCQGkw)
 
 [:us: English version here](README.md)
 
