@@ -36,7 +36,7 @@ git clone git@github.com:MIUQAM/aura.git
 - Marc-André Cossette ([Website](http://www.creationsmac.com), [LinkedIn](https://linkedin.com/in/macossette))
 
 #### Électro / Arduinos
-- Jonathan Jeason ([Github](https://github.com/jjshred), [LinkedIn](https://linkedin.com/in/giovanni-jeanson-7a8974ba))
+- Jonathan Jeanson ([Github](https://github.com/jjshred), [LinkedIn](https://linkedin.com/in/giovanni-jeanson-7a8974ba))
 - Hugo Laliberté ([Website](http://hugolaliberte.com/), [Github](https://github.com/lachose1), [LinkedIn](https://ca.linkedin.com/in/hugolaliberte))
 
 #### Intégration
@@ -44,7 +44,7 @@ git clone git@github.com:MIUQAM/aura.git
 - Erwan d'Orgeville ([Website](http://erwandorgeville.com), [Github](https://github.com/th3m4ri0), [LinkedIn](https://linkedin.com/in/th3m4ri0))
 
 #### Visuel
-- Maxime Bergeron ([Github](https://github.com/maxime1bergeron), [LinkedIn](https://linkedin.com/in/maxime1bergeron))
+- Maxime Bergeron ([Website](http://maximebergeron.ca/), [Github](https://github.com/maxime1bergeron), [LinkedIn](https://linkedin.com/in/maxime1bergeron))
 - Hugo Daoust ([LinkedIn](https://www.linkedin.com/in/hugo-daoust-4174b610a))
 - Ruby-Maude Rioux ([Github](https://github.com/rubanmauve), [LinkedIn](https://linkedin.com/pub/ruby-maude-rioux/5a/3b9/b5a))
 
